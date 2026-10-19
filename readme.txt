@@ -16,6 +16,13 @@ Afrit Backup Manager ("afrit" is Icelandic for "copy") backs up your complete Wo
 
 **Every feature is included. There is no PRO version, no upsell and no account to create. All free.**
 
+**What makes it different**
+
+* **Everything free, for good.** Incremental backups, encryption, every storage destination, scheduling, retention rules, migration and WP-CLI are all in this plugin. No add-ons, no licence, no account, and no server of ours in between.
+* **Security first.** Backups are kept out of reach of the web and the plugin proves it with a daily HTTP self-test of every archive type. Restores only accept the plugin's own SQL format and swap the database in atomically. FTPS certificates are verified, the SFTP host key is pinned, and stored credentials are encrypted.
+* **Built for shared hosting.** Every job runs in short, resumable steps, driven by background requests, WP-Cron and the admin screen alike, so large sites back up without ever hitting a time limit.
+* **Precise control.** A clickable folder tree with "most specific rule wins", database tables one by one, retention in days per location, and "Keep" marks for backups that must never be deleted.
+
 **Set up in one click**
 
 One button applies safe defaults and runs the first backup right away: daily incremental file backups with a full backup every seventh run, a daily database backup, a backup before every update, sensible retention, and an e-mail when something goes wrong. Everything can be fine-tuned later.
@@ -69,6 +76,10 @@ Encrypt the database — and optionally the file archives — with a passphrase 
 **Detailed reports**
 
 Every backup, restore and migration is recorded: when it ran, what triggered it, what it included, its size, where it was stored and whether it succeeded — with the complete log. E-mail reports always, only on problems, or never.
+
+**Open source**
+
+The complete source code, the developer documentation and the issue tracker are on GitHub: https://github.com/sglogger/afrit-backup-manager. The plugin ships no minified or compiled code.
 
 **WP-CLI**
 

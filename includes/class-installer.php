@@ -210,6 +210,8 @@ final class Installer {
 			delete_option( $option );
 		}
 
+		delete_metadata( 'user', 0, 'afbm_exposure_dismissed', '', true );
+
 		global $wpdb;
 		$runs = self::table_runs();
 		// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.DirectDatabaseQuery.SchemaChange, WordPress.DB.PreparedSQL.InterpolatedNotPrepared, PluginCheck.Security.DirectDB.UnescapedDBParameter -- uninstall drops our own table; the name is built from $wpdb->prefix.

@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: Afrit Backup Manager 1.0.0\n"
 "Report-Msgid-Bugs-To: https://github.com/sglogger/afrit-backup-manager/"
 "issues\n"
-"POT-Creation-Date: 2026-10-19T14:31:14+00:00\n"
+"POT-Creation-Date: 2026-10-19T15:01:25+00:00\n"
 "PO-Revision-Date: 2026-10-19 12:00+0000\n"
 "Last-Translator: Steven Glogger\n"
 "Language-Team: German\n"
@@ -31,19 +31,13 @@ msgstr "https://github.com/sglogger/afrit-backup-manager"
 #. Description of the plugin
 #: afrit-backup-manager.php
 msgid ""
-"Backups, restores and migrations for the whole WordPress installation. "
-"Incremental file backups, selectable database tables, encryption, "
-"scheduling, retention rules and simultaneous upload to this server, FTP, "
-"SFTP, Dropbox and OneDrive. Restore files, database, plugins or themes "
-"separately, or move the site to a new domain. There is no PRO version. All "
-"free."
-msgstr ""
-"Backups, Wiederherstellungen und Migrationen für die gesamte WordPress-"
-"Installation. Inkrementelle Datei-Backups, auswählbare Datenbanktabellen, "
-"Verschlüsselung, Zeitpläne, Aufbewahrungsregeln und gleichzeitiger Upload "
-"auf diesen Server, per FTP und SFTP sowie zu Dropbox und OneDrive. Stelle "
-"Dateien, Datenbank, Plugins oder Themes getrennt wieder her oder ziehe die "
-"Website auf eine neue Domain um. Es gibt keine PRO-Version. Alles kostenlos."
+"Backups, restores and migrations for the whole WordPress installation "
+"(\"afrit\" is Icelandic for \"copy\"). Incremental file backups, selectable "
+"database tables, encryption, scheduling, retention rules and simultaneous "
+"upload to this server, FTP, SFTP, Dropbox and OneDrive. Restore files, "
+"database, plugins or themes separately, or move the site to a new domain. "
+"There is no PRO version. All free."
+msgstr "Backups, Wiederherstellungen und Migrationen für die gesamte WordPress-Installation („afrit“ ist Isländisch für „Kopie“). Inkrementelle Datei-Backups, auswählbare Datenbanktabellen, Verschlüsselung, Zeitpläne, Aufbewahrungsregeln und gleichzeitiger Upload auf diesen Server, FTP, SFTP, Dropbox und OneDrive. Stelle Dateien, Datenbank, Plugins oder Themes einzeln wieder her oder ziehe die Website auf eine neue Domain um. Es gibt keine PRO-Version. Alles kostenlos."
 
 #. Author of the plugin
 #: afrit-backup-manager.php
@@ -68,54 +62,54 @@ msgstr "Dies ist eine Testnachricht von Afrit Backup Manager."
 msgid "Before restore"
 msgstr "Vor der Wiederherstellung"
 
-#: admin/class-admin.php:61 admin/class-admin.php:62
+#: admin/class-admin.php:65 admin/class-admin.php:66
 #: admin/views/page-dashboard.php:47
 msgid "Backup Manager"
 msgstr "Backup Manager"
 
-#: admin/class-admin.php:71 admin/class-admin.php:102
+#: admin/class-admin.php:75 admin/class-admin.php:106
 msgid "Dashboard"
 msgstr "Dashboard"
 
-#: admin/class-admin.php:72 admin/views/page-backups.php:20
+#: admin/class-admin.php:76 admin/views/page-backups.php:20
 #: admin/views/page-restore.php:24
 msgid "Backups"
 msgstr "Backups"
 
-#: admin/class-admin.php:73 admin/views/page-migration.php:31
+#: admin/class-admin.php:77 admin/views/page-migration.php:31
 #: includes/report/class-run-repository.php:215
 msgid "Migration"
 msgstr "Migration"
 
-#: admin/class-admin.php:74 admin/views/page-reports.php:21
+#: admin/class-admin.php:78 admin/views/page-reports.php:21
 msgid "Reports"
 msgstr "Berichte"
 
 #. translators: %d: days
-#: admin/class-admin.php:75 admin/views/page-settings.php:29
+#: admin/class-admin.php:79 admin/views/page-settings.php:29
 #: admin/views/settings/tab-storage.php:107
 msgid "Settings"
 msgstr "Einstellungen"
 
-#: admin/class-admin.php:84 admin/class-backups-list-table.php:222
+#: admin/class-admin.php:88 admin/class-backups-list-table.php:222
 #: admin/views/page-restore.php:21 includes/report/class-run-repository.php:197
 msgid "Restore"
 msgstr "Wiederherstellen"
 
-#: admin/class-admin.php:131 admin/views/page-dashboard.php:69
+#: admin/class-admin.php:135 admin/views/page-dashboard.php:69
 #: includes/report/class-run-repository.php:165
 msgid "Running"
 msgstr "Läuft"
 
-#: admin/class-admin.php:132
+#: admin/class-admin.php:136
 msgid "Queued"
 msgstr "In der Warteschlange"
 
-#: admin/class-admin.php:133
+#: admin/class-admin.php:137
 msgid "Finished. Reloading…"
 msgstr "Abgeschlossen. Seite wird neu geladen …"
 
-#: admin/class-admin.php:134
+#: admin/class-admin.php:138
 msgid ""
 "The status could not be read. If a database restore just finished, log in "
 "again."
@@ -124,72 +118,72 @@ msgstr ""
 "Wiederherstellung abgeschlossen wurde, melde dich erneut an."
 
 #. translators: 1: file name, 2: percentage
-#: admin/class-admin.php:136
+#: admin/class-admin.php:140
 #, php-format
 msgid "Uploading %1$s: %2$s%%"
 msgstr "%1$s wird hochgeladen: %2$s%%"
 
-#: admin/class-admin.php:137
+#: admin/class-admin.php:141
 msgid "Upload complete. Reloading…"
 msgstr "Upload abgeschlossen. Seite wird neu geladen …"
 
 #. translators: %s: error message
-#: admin/class-admin.php:139
+#: admin/class-admin.php:143
 #, php-format
 msgid "Upload failed: %s"
 msgstr "Upload fehlgeschlagen: %s"
 
-#: admin/class-admin.php:140
+#: admin/class-admin.php:144
 msgid "Delete this backup from every location? This cannot be undone."
 msgstr ""
 "Dieses Backup an allen Speicherorten löschen? Dies kann nicht rückgängig "
 "gemacht werden."
 
-#: admin/class-admin.php:141
+#: admin/class-admin.php:145
 msgid "Restore now? The selected parts of this site will be overwritten."
 msgstr ""
 "Jetzt wiederherstellen? Die ausgewählten Teile dieser Website werden "
 "überschrieben."
 
-#: admin/class-admin.php:142
+#: admin/class-admin.php:146
 msgid "Remove this destination? Backups already stored there are not deleted."
 msgstr ""
 "Dieses Speicherziel entfernen? Dort bereits gespeicherte Backups werden "
 "nicht gelöscht."
 
-#: admin/class-admin.php:143
+#: admin/class-admin.php:147
 msgid "Copied"
 msgstr "Kopiert"
 
-#: admin/class-admin.php:144
+#: admin/class-admin.php:148
 msgid "The folders could not be loaded."
 msgstr "Die Ordner konnten nicht geladen werden."
 
-#: admin/class-admin.php:145
+#: admin/class-admin.php:149
 msgid "Only the first 500 folders are shown."
 msgstr "Es werden nur die ersten 500 Ordner angezeigt."
 
-#: admin/class-admin.php:146 admin/views/settings/tab-files.php:31
+#: admin/class-admin.php:150 admin/views/settings/tab-files.php:31
 msgid "rule"
 msgstr "Regel"
 
-#: admin/class-admin.php:147 admin/views/settings/tab-files.php:32
+#: admin/class-admin.php:151 admin/views/settings/tab-files.php:32
 msgid "default"
 msgstr "Standard"
 
-#: admin/class-admin.php:148
+#: admin/class-admin.php:152
 msgid "Reset to inherited"
 msgstr "Auf geerbte Einstellung zurücksetzen"
 
-#: admin/class-admin.php:149 admin/views/settings/tab-files.php:29
+#: admin/class-admin.php:153 admin/views/settings/tab-files.php:29
 msgid "included"
 msgstr "eingeschlossen"
 
-#: admin/class-admin.php:150 admin/views/settings/tab-files.php:30
+#: admin/class-admin.php:154 admin/views/settings/tab-files.php:30
 msgid "excluded"
 msgstr "ausgeschlossen"
 
-#: admin/class-admin.php:151
+#: admin/class-admin.php:155
 msgid ""
 "No folder rules yet: everything in the selected parts is backed up, except "
 "the folders skipped by default."
@@ -197,22 +191,26 @@ msgstr ""
 "Noch keine Ordnerregeln: Alles in den ausgewählten Bereichen wird gesichert, "
 "außer den standardmäßig übersprungenen Ordnern."
 
-#: admin/class-admin.php:152 admin/views/page-restore.php:105
+#: admin/class-admin.php:156 admin/views/page-restore.php:105
 #: admin/views/settings/tab-security.php:85
 #: admin/views/settings/tab-storage.php:137
 #: admin/views/settings/tab-storage.php:272
 msgid "Remove"
 msgstr "Entfernen"
 
-#: admin/class-admin.php:153
+#: admin/class-admin.php:157
 msgid "Show subfolders"
 msgstr "Unterordner anzeigen"
 
-#: admin/class-admin.php:184
+#: admin/class-admin.php:197
+msgid "Dismiss until the next test"
+msgstr "Bis zum nächsten Test ausblenden"
+
+#: admin/class-admin.php:202
 msgid "Backup Manager:"
 msgstr "Backup Manager:"
 
-#: admin/class-admin.php:185
+#: admin/class-admin.php:203
 msgid ""
 "your backup files can be downloaded over the internet by anyone who knows "
 "their address."
@@ -220,11 +218,11 @@ msgstr ""
 "Deine Backup-Dateien können von jedem, der ihre Adresse kennt, über das "
 "Internet heruntergeladen werden."
 
-#: admin/class-admin.php:187
+#: admin/class-admin.php:205
 msgid "Fix this now"
 msgstr "Jetzt beheben"
 
-#: admin/class-admin.php:196
+#: admin/class-admin.php:216
 msgid ""
 "The PHP zip extension (ZipArchive) is missing. File backups cannot run until "
 "your host enables it."
@@ -232,7 +230,7 @@ msgstr ""
 "Die PHP-Erweiterung zip (ZipArchive) fehlt. Datei-Backups können erst "
 "ausgeführt werden, wenn dein Hoster sie aktiviert."
 
-#: admin/class-admin.php:200
+#: admin/class-admin.php:220
 msgid ""
 "This is a multisite network. Backups cover the whole installation; restoring "
 "single sites of a network is not supported."
@@ -241,21 +239,21 @@ msgstr ""
 "das Wiederherstellen einzelner Websites eines Netzwerks wird nicht "
 "unterstützt."
 
-#: admin/class-admin.php:279 admin/class-admin.php:420
-#: includes/access/class-password-gate.php:136
+#: admin/class-admin.php:299 admin/class-admin.php:418
+#: admin/class-admin.php:455 includes/access/class-password-gate.php:136
 #: includes/storage/class-oauth.php:134
 msgid "You do not have permission to do this."
 msgstr "Du hast keine Berechtigung, dies zu tun."
 
-#: admin/class-admin.php:285 admin/class-admin.php:431
+#: admin/class-admin.php:305 admin/class-admin.php:466
 msgid "Backup Manager is locked. Enter its password first."
 msgstr "Backup Manager ist gesperrt. Gib zuerst das Passwort dafür ein."
 
-#: admin/class-admin.php:327
+#: admin/class-admin.php:347
 msgid "Settings saved."
 msgstr "Einstellungen gespeichert."
 
-#: admin/class-admin.php:328
+#: admin/class-admin.php:348
 msgid ""
 "All set. Your first backup is running now; scheduled backups take over from "
 "tonight."
@@ -263,20 +261,20 @@ msgstr ""
 "Alles eingerichtet. Dein erstes Backup läuft jetzt; ab heute Nacht "
 "übernehmen die geplanten Backups."
 
-#: admin/class-admin.php:329
+#: admin/class-admin.php:349
 msgid ""
 "Backup started. You can leave this page; it continues in the background."
 msgstr ""
 "Backup gestartet. Du kannst diese Seite verlassen; es läuft im Hintergrund "
 "weiter."
 
-#: admin/class-admin.php:330
+#: admin/class-admin.php:350
 msgid "Restore started. Keep this page open to follow it."
 msgstr ""
 "Wiederherstellung gestartet. Lass diese Seite geöffnet, um den Fortschritt "
 "zu verfolgen."
 
-#: admin/class-admin.php:331
+#: admin/class-admin.php:351
 msgid ""
 "Import started. When it has finished, the backup appears in the list and can "
 "be restored."
@@ -284,15 +282,15 @@ msgstr ""
 "Import gestartet. Sobald er abgeschlossen ist, erscheint das Backup in der "
 "Liste und kann wiederhergestellt werden."
 
-#: admin/class-admin.php:332
+#: admin/class-admin.php:352
 msgid "The running job will stop at its next step."
 msgstr "Der laufende Vorgang wird beim nächsten Schritt angehalten."
 
-#: admin/class-admin.php:333
+#: admin/class-admin.php:353
 msgid "Backup deleted."
 msgstr "Backup gelöscht."
 
-#: admin/class-admin.php:334
+#: admin/class-admin.php:354
 msgid ""
 "Marked as keep. Automatic retention will never delete this backup or the "
 "backups it depends on."
@@ -300,13 +298,13 @@ msgstr ""
 "Als „Behalten“ markiert. Die automatische Aufbewahrung löscht dieses Backup "
 "und die Backups, auf denen es aufbaut, nie."
 
-#: admin/class-admin.php:335
+#: admin/class-admin.php:355
 msgid "Keep mark removed. The backup is subject to the retention rules again."
 msgstr ""
 "Markierung „Behalten“ entfernt. Für das Backup gelten wieder die "
 "Aufbewahrungsregeln."
 
-#: admin/class-admin.php:336
+#: admin/class-admin.php:356
 msgid ""
 "This backup, or an incremental backup that depends on it, is marked as keep. "
 "Remove the mark first."
@@ -314,7 +312,7 @@ msgstr ""
 "Dieses Backup oder ein inkrementelles Backup, das darauf aufbaut, ist als "
 "„Behalten“ markiert. Entferne zuerst die Markierung."
 
-#: admin/class-admin.php:337
+#: admin/class-admin.php:357
 msgid ""
 "The backup could not be deleted from every location. It stays listed for the "
 "remaining copies."
@@ -322,58 +320,58 @@ msgstr ""
 "Das Backup konnte nicht an allen Speicherorten gelöscht werden. Es bleibt "
 "für die verbleibenden Kopien in der Liste."
 
-#: admin/class-admin.php:338
+#: admin/class-admin.php:358
 msgid "The backup list has been rebuilt from all locations."
 msgstr "Die Backup-Liste wurde aus allen Speicherorten neu aufgebaut."
 
-#: admin/class-admin.php:339
+#: admin/class-admin.php:359
 msgid "Another job is already running. Wait for it to finish."
 msgstr "Es läuft bereits ein anderer Vorgang. Warte, bis er abgeschlossen ist."
 
-#: admin/class-admin.php:340
+#: admin/class-admin.php:360
 msgid "Nothing was selected."
 msgstr "Es wurde nichts ausgewählt."
 
-#: admin/class-admin.php:341
+#: admin/class-admin.php:361
 msgid "The request was not valid."
 msgstr "Die Anfrage war ungültig."
 
-#: admin/class-admin.php:342
+#: admin/class-admin.php:362
 msgid "The passphrase is wrong."
 msgstr "Die Passphrase ist falsch."
 
-#: admin/class-admin.php:343
+#: admin/class-admin.php:363
 msgid ""
 "The passphrase must have at least 12 characters, and both fields must match."
 msgstr ""
 "Die Passphrase muss mindestens 12 Zeichen lang sein und beide Felder müssen "
 "übereinstimmen."
 
-#: admin/class-admin.php:344
+#: admin/class-admin.php:364
 msgid "Destination saved."
 msgstr "Speicherziel gespeichert."
 
-#: admin/class-admin.php:345
+#: admin/class-admin.php:365
 msgid "Destination removed. Backups already stored there were not deleted."
 msgstr ""
 "Speicherziel entfernt. Bereits dort gespeicherte Backups wurden nicht "
 "gelöscht."
 
-#: admin/class-admin.php:346
+#: admin/class-admin.php:366
 msgid "Connection test passed: the destination is reachable and writable."
 msgstr ""
 "Verbindungstest erfolgreich: Das Speicherziel ist erreichbar und "
 "beschreibbar."
 
-#: admin/class-admin.php:347
+#: admin/class-admin.php:367
 msgid "Connection test failed."
 msgstr "Verbindungstest fehlgeschlagen."
 
-#: admin/class-admin.php:348
+#: admin/class-admin.php:368
 msgid "Connected. The destination is ready to use."
 msgstr "Verbunden. Das Speicherziel ist einsatzbereit."
 
-#: admin/class-admin.php:349
+#: admin/class-admin.php:369
 msgid ""
 "The connection could not be completed. A code is valid only once and for a "
 "few minutes — press \"Connect\" again for a new one. With your own app, also "
@@ -384,22 +382,22 @@ msgstr ""
 "erhalten. Bei einer eigenen App prüfe zusätzlich deren Zugangsdaten und die "
 "Redirect-URI."
 
-#: admin/class-admin.php:350
+#: admin/class-admin.php:370
 msgid "The test e-mail was accepted for delivery."
 msgstr "Die Test-E-Mail wurde zur Zustellung angenommen."
 
-#: admin/class-admin.php:351
+#: admin/class-admin.php:371
 msgid ""
 "WordPress could not send the e-mail. Check the site's mail configuration."
 msgstr ""
 "WordPress konnte die E-Mail nicht senden. Prüfe die E-Mail-Konfiguration der "
 "Website."
 
-#: admin/class-admin.php:352
+#: admin/class-admin.php:372
 msgid "The backup directory has been tested."
 msgstr "Das Backup-Verzeichnis wurde getestet."
 
-#: admin/class-admin.php:353
+#: admin/class-admin.php:373
 msgid ""
 "That backup directory could not be created or is not writable. The previous "
 "one is still in use."
@@ -407,72 +405,79 @@ msgstr ""
 "Dieses Backup-Verzeichnis konnte nicht erstellt werden oder ist nicht "
 "beschreibbar. Das bisherige wird weiterhin verwendet."
 
-#: admin/class-admin.php:354
+#: admin/class-admin.php:374
 msgid ""
 "That folder cannot hold backups: it is WordPress itself, wp-content, "
 "uploads, plugins or themes, a parent of one of them, or inside code folders. "
 "Choose a separate folder, ideally outside the web root. The previous one is "
 "still in use."
-msgstr "Dieser Ordner kann keine Backups aufnehmen: Er ist WordPress selbst, wp-content, uploads, plugins oder themes, ein übergeordneter Ordner davon oder liegt in einem Code-Ordner. Wähle einen eigenen Ordner, idealerweise außerhalb des Web-Roots. Der bisherige Ordner bleibt in Verwendung."
+msgstr ""
+"Dieser Ordner kann keine Backups aufnehmen: Er ist WordPress selbst, wp-"
+"content, uploads, plugins oder themes, ein übergeordneter Ordner davon oder "
+"liegt in einem Code-Ordner. Wähle einen eigenen Ordner, idealerweise "
+"außerhalb des Web-Roots. Der bisherige Ordner bleibt in Verwendung."
 
-#: admin/class-admin.php:355
+#: admin/class-admin.php:375
 msgid ""
 "That folder already contains other files. Choose a new or empty folder used "
 "only for backups. The previous one is still in use."
-msgstr "Dieser Ordner enthält bereits andere Dateien. Wähle einen neuen oder leeren Ordner, der nur für Backups genutzt wird. Der bisherige Ordner bleibt in Verwendung."
+msgstr ""
+"Dieser Ordner enthält bereits andere Dateien. Wähle einen neuen oder leeren "
+"Ordner, der nur für Backups genutzt wird. Der bisherige Ordner bleibt in "
+"Verwendung."
 
-#: admin/class-admin.php:356
+#: admin/class-admin.php:376
 msgid "The Backup Manager password is set."
 msgstr "Das Backup-Manager-Passwort wurde festgelegt."
 
-#: admin/class-admin.php:357
+#: admin/class-admin.php:377
 msgid "The Backup Manager password has been removed."
 msgstr "Das Backup-Manager-Passwort wurde entfernt."
 
-#: admin/class-admin.php:358
+#: admin/class-admin.php:378
 msgid "The current password is wrong."
 msgstr "Das aktuelle Passwort ist falsch."
 
-#: admin/class-admin.php:359
+#: admin/class-admin.php:379
 msgid ""
 "The password must have at least 10 characters, and both fields must match."
 msgstr ""
 "Das Passwort muss mindestens 10 Zeichen lang sein und beide Felder müssen "
 "übereinstimmen."
 
-#: admin/class-admin.php:360
+#: admin/class-admin.php:380
 msgid "Wrong password."
 msgstr "Falsches Passwort."
 
-#: admin/class-admin.php:361
+#: admin/class-admin.php:381
 msgid "Too many wrong passwords. Try again in 15 minutes."
 msgstr "Zu viele falsche Passwörter. Versuche es in 15 Minuten erneut."
 
-#: admin/class-admin.php:362
+#: admin/class-admin.php:382
 msgid "Migration key created. Copy it now; it is shown only once."
 msgstr ""
 "Migrationsschlüssel erstellt. Kopiere ihn jetzt; er wird nur einmal "
 "angezeigt."
 
-#: admin/class-admin.php:363
+#: admin/class-admin.php:383
 msgid "A migration key needs a backup whose files are stored on this server."
 msgstr ""
 "Für einen Migrationsschlüssel wird ein Backup benötigt, dessen Dateien auf "
 "diesem Server gespeichert sind."
 
-#: admin/class-admin.php:364
+#: admin/class-admin.php:384
 msgid "That is not a valid migration key."
 msgstr "Das ist kein gültiger Migrationsschlüssel."
 
-#: admin/class-admin.php:365
+#: admin/class-admin.php:385
 msgid "All migration keys have been revoked."
 msgstr "Alle Migrationsschlüssel wurden widerrufen."
 
-#: admin/class-admin.php:436
+#: admin/class-admin.php:471
 msgid "Unknown file."
 msgstr "Unbekannte Datei."
 
-#: admin/class-admin.php:441
+#: admin/class-admin.php:476
 msgid ""
 "This file is not stored on this server. Download it from the remote "
 "destination, or restore from there directly."
@@ -480,19 +485,19 @@ msgstr ""
 "Diese Datei ist nicht auf diesem Server gespeichert. Lade sie vom externen "
 "Speicherziel herunter oder stelle direkt von dort wieder her."
 
-#: admin/class-admin.php:470
+#: admin/class-admin.php:505
 msgid "Full"
 msgstr "Vollständig"
 
-#: admin/class-admin.php:472
+#: admin/class-admin.php:507
 msgid "Incremental"
 msgstr "Inkrementell"
 
-#: admin/class-admin.php:474
+#: admin/class-admin.php:509
 msgid "Partial"
 msgstr "Teilweise"
 
-#: admin/class-admin.php:476 admin/views/page-settings.php:22
+#: admin/class-admin.php:511 admin/views/page-settings.php:22
 #: includes/backup/class-components.php:104
 msgid "Database"
 msgstr "Datenbank"
@@ -945,14 +950,19 @@ msgstr ""
 msgid ""
 "The source site is on my private network (internal address, non-standard "
 "port or plain http)"
-msgstr "Die Quell-Website liegt in meinem privaten Netzwerk (interne Adresse, abweichender Port oder unverschlüsseltes http)"
+msgstr ""
+"Die Quell-Website liegt in meinem privaten Netzwerk (interne Adresse, "
+"abweichender Port oder unverschlüsseltes http)"
 
 #: admin/views/page-migration.php:100
 msgid ""
 "Only import keys you created yourself. Without this option the target only "
 "connects to public HTTPS addresses, which keeps a manipulated key from "
 "reaching internal services."
-msgstr "Importiere nur Schlüssel, die du selbst erstellt hast. Ohne diese Option verbindet sich das Ziel nur mit öffentlichen HTTPS-Adressen; so kann ein manipulierter Schlüssel keine internen Dienste erreichen."
+msgstr ""
+"Importiere nur Schlüssel, die du selbst erstellt hast. Ohne diese Option "
+"verbindet sich das Ziel nur mit öffentlichen HTTPS-Adressen; so kann ein "
+"manipulierter Schlüssel keine internen Dienste erreichen."
 
 #: admin/views/page-migration.php:101
 msgid "Import backup"
@@ -2103,7 +2113,10 @@ msgstr ""
 msgid ""
 "Without FTPS, the password and the backups travel unencrypted. Use FTPS or "
 "SFTP whenever the server supports it, and turn on backup encryption."
-msgstr "Ohne FTPS werden Passwort und Backups unverschlüsselt übertragen. Verwende FTPS oder SFTP, wann immer der Server es unterstützt, und aktiviere die Backup-Verschlüsselung."
+msgstr ""
+"Ohne FTPS werden Passwort und Backups unverschlüsselt übertragen. Verwende "
+"FTPS oder SFTP, wann immer der Server es unterstützt, und aktiviere die "
+"Backup-Verschlüsselung."
 
 #: admin/views/settings/tab-storage.php:236
 msgid "Name"
@@ -2137,7 +2150,11 @@ msgid ""
 "Leave empty: the certificate must be valid for the host name. Only for your "
 "own server with a self-signed certificate: press \"Test\", compare the key "
 "shown with the one on your server, and enter it here (sha256//…)."
-msgstr "Leer lassen: Das Zertifikat muss für den Hostnamen gültig sein. Nur für deinen eigenen Server mit selbstsigniertem Zertifikat: Klicke auf „Testen“, vergleiche den angezeigten Schlüssel mit dem auf deinem Server und trage ihn hier ein (sha256//…)."
+msgstr ""
+"Leer lassen: Das Zertifikat muss für den Hostnamen gültig sein. Nur für "
+"deinen eigenen Server mit selbstsigniertem Zertifikat: Klicke auf „Testen“, "
+"vergleiche den angezeigten Schlüssel mit dem auf deinem Server und trage ihn "
+"hier ein (sha256//…)."
 
 #: admin/views/settings/tab-storage.php:279
 msgid ""
@@ -2518,20 +2535,29 @@ msgstr "Die PHP-Erweiterung cURL ist auf diesem Server nicht installiert."
 msgid ""
 "The server does not support FTPS (TLS). Nothing was sent. Use SFTP, enable "
 "TLS on the server, or — only on a trusted network — switch FTPS off."
-msgstr "Der Server unterstützt kein FTPS (TLS). Es wurde nichts gesendet. Verwende SFTP, aktiviere TLS auf dem Server oder schalte FTPS – nur in einem vertrauenswürdigen Netzwerk – aus."
+msgstr ""
+"Der Server unterstützt kein FTPS (TLS). Es wurde nichts gesendet. Verwende "
+"SFTP, aktiviere TLS auf dem Server oder schalte FTPS – nur in einem "
+"vertrauenswürdigen Netzwerk – aus."
 
 #: includes/storage/class-storage-ftp.php:179
 msgid ""
 "The server's TLS certificate could not be verified, so nothing was sent. If "
 "this is your own server with a self-signed certificate, pin its key (see "
 "\"Test\")."
-msgstr "Das TLS-Zertifikat des Servers konnte nicht geprüft werden, deshalb wurde nichts gesendet. Ist es dein eigener Server mit selbstsigniertem Zertifikat, lege seinen Schlüssel fest (siehe „Testen“)."
+msgstr ""
+"Das TLS-Zertifikat des Servers konnte nicht geprüft werden, deshalb wurde "
+"nichts gesendet. Ist es dein eigener Server mit selbstsigniertem Zertifikat, "
+"lege seinen Schlüssel fest (siehe „Testen“)."
 
 #: includes/storage/class-storage-ftp.php:181
 msgid ""
 "The server's TLS key does not match the pinned key. Nothing was sent. If the "
 "certificate was replaced on purpose, update the pinned key."
-msgstr "Der TLS-Schlüssel des Servers stimmt nicht mit dem festgelegten Schlüssel überein. Es wurde nichts gesendet. Wurde das Zertifikat absichtlich ersetzt, aktualisiere den festgelegten Schlüssel."
+msgstr ""
+"Der TLS-Schlüssel des Servers stimmt nicht mit dem festgelegten Schlüssel "
+"überein. Es wurde nichts gesendet. Wurde das Zertifikat absichtlich ersetzt, "
+"aktualisiere den festgelegten Schlüssel."
 
 #: includes/storage/class-storage-ftp.php:183
 msgid "The FTP server rejected the user name or password."
@@ -2547,7 +2573,10 @@ msgstr "Keine Verbindung zum FTP-Server möglich."
 msgid ""
 "The server presented the key %s. Compare it with the key on your server; "
 "only if it matches, enter it as pinned key."
-msgstr "Der Server hat den Schlüssel %s vorgelegt. Vergleiche ihn mit dem Schlüssel auf deinem Server; nur wenn er übereinstimmt, trage ihn als festgelegten Schlüssel ein."
+msgstr ""
+"Der Server hat den Schlüssel %s vorgelegt. Vergleiche ihn mit dem Schlüssel "
+"auf deinem Server; nur wenn er übereinstimmt, trage ihn als festgelegten "
+"Schlüssel ein."
 
 #: includes/storage/class-storage-ftp.php:350
 msgid "The file does not exist on the FTP server."
@@ -2614,6 +2643,22 @@ msgstr "Der SFTP-Upload ist fehlgeschlagen."
 #: includes/storage/class-storage-sftp.php:197
 msgid "The SFTP download failed."
 msgstr "Der SFTP-Download ist fehlgeschlagen."
+
+#~ msgid ""
+#~ "Backups, restores and migrations for the whole WordPress installation. "
+#~ "Incremental file backups, selectable database tables, encryption, "
+#~ "scheduling, retention rules and simultaneous upload to this server, FTP, "
+#~ "SFTP, Dropbox and OneDrive. Restore files, database, plugins or themes "
+#~ "separately, or move the site to a new domain. There is no PRO version. "
+#~ "All free."
+#~ msgstr ""
+#~ "Backups, Wiederherstellungen und Migrationen für die gesamte WordPress-"
+#~ "Installation. Inkrementelle Datei-Backups, auswählbare Datenbanktabellen, "
+#~ "Verschlüsselung, Zeitpläne, Aufbewahrungsregeln und gleichzeitiger Upload "
+#~ "auf diesen Server, per FTP und SFTP sowie zu Dropbox und OneDrive. Stelle "
+#~ "Dateien, Datenbank, Plugins oder Themes getrennt wieder her oder ziehe "
+#~ "die Website auf eine neue Domain um. Es gibt keine PRO-Version. Alles "
+#~ "kostenlos."
 
 #~ msgid ""
 #~ "Plain FTP sends the password unencrypted. Use FTPS or SFTP whenever the "

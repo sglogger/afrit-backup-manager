@@ -34,6 +34,9 @@ final class Admin {
 
 	private const NONCE = 'afbm_admin';
 
+	/** User meta: the exposure test result (its timestamp) a user dismissed. */
+	public const META_EXPOSURE_DISMISSED = 'afbm_exposure_dismissed';
+
 	public function register(): void {
 		add_action( 'admin_menu', [ $this, 'add_menu' ] );
 		add_action( 'admin_init', [ $this, 'handle_post' ] );
@@ -41,6 +44,7 @@ final class Admin {
 		add_action( 'admin_notices', [ $this, 'notices' ] );
 		add_action( 'admin_post', [ OAuth::class, 'callback' ] );
 		add_action( 'admin_post_afbm_download', [ $this, 'download' ] );
+		add_action( 'admin_post_afbm_dismiss_exposure', [ $this, 'dismiss_exposure' ] );
 		add_filter( 'plugin_action_links_' . AFBM_BASENAME, [ $this, 'action_links' ] );
 
 		// The Restore screen is not in the menu; highlight "Backups" for it.
@@ -178,14 +182,30 @@ final class Admin {
 		}
 
 		// The one notice shown outside our own screens: backups are exposed.
-		if ( 'exposed' === Paths::exposure()['status'] ) {
-			printf(
-				'<div class="notice notice-error"><p><strong>%s</strong> %s <a href="%s">%s</a></p></div>',
-				esc_html__( 'Backup Manager:', 'afrit-backup-manager' ),
-				esc_html__( 'your backup files can be downloaded over the internet by anyone who knows their address.', 'afrit-backup-manager' ),
-				esc_url( admin_url( 'admin.php?page=' . self::MENU_SETTINGS . '&tab=security' ) ),
-				esc_html__( 'Fix this now', 'afrit-backup-manager' )
-			);
+		// The one notice shown outside our own screens: backups are exposed.
+		// It explains the fix, disappears by itself once the daily (or a
+		// manual) test passes, and can be dismissed per user until the next
+		// test — on the plugin's own screens it always stays visible.
+		$exposure = Paths::exposure();
+		if ( 'exposed' === $exposure['status'] ) {
+			$dismissed = (int) get_user_meta( get_current_user_id(), self::META_EXPOSURE_DISMISSED, true );
+
+			if ( self::is_own_screen() || $dismissed !== $exposure['checked'] ) {
+				$dismiss = self::is_own_screen() ? '' : sprintf(
+					' <a href="%s">%s</a>',
+					esc_url( wp_nonce_url( admin_url( 'admin-post.php?action=afbm_dismiss_exposure' ), 'afbm_dismiss_exposure' ) ),
+					esc_html__( 'Dismiss until the next test', 'afrit-backup-manager' )
+				);
+
+				printf(
+					'<div class="notice notice-error"><p><strong>%s</strong> %s <a href="%s">%s</a>%s</p></div>',
+					esc_html__( 'Backup Manager:', 'afrit-backup-manager' ),
+					esc_html__( 'your backup files can be downloaded over the internet by anyone who knows their address.', 'afrit-backup-manager' ),
+					esc_url( admin_url( 'admin.php?page=' . self::MENU_SETTINGS . '&tab=security' ) ),
+					esc_html__( 'Fix this now', 'afrit-backup-manager' ),
+					$dismiss // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- built from escaped parts above.
+				);
+			}
 		}
 
 		if ( ! self::is_own_screen() ) {
@@ -388,6 +408,21 @@ final class Admin {
 
 	public static function set_flash( string $detail ): void {
 		set_transient( 'afbm_flash_' . get_current_user_id(), $detail, MINUTE_IN_SECONDS * 5 );
+	}
+
+	/**
+	 * Hide the site-wide exposure notice for this user until the next test.
+	 */
+	public function dismiss_exposure(): void {
+		if ( ! current_user_can( self::CAP ) ) {
+			wp_die( esc_html__( 'You do not have permission to do this.', 'afrit-backup-manager' ), '', [ 'response' => 403 ] );
+		}
+		check_admin_referer( 'afbm_dismiss_exposure' );
+
+		update_user_meta( get_current_user_id(), self::META_EXPOSURE_DISMISSED, Paths::exposure()['checked'] );
+
+		wp_safe_redirect( wp_get_referer() ?: admin_url() );
+		exit;
 	}
 
 	// -------------------------------------------------------------------------
