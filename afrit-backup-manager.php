@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       Afrit Backup Manager
  * Plugin URI:        https://github.com/sglogger/afrit-backup-manager
- * Description:       Backups, restores and migrations for the whole WordPress installation. Incremental file backups, selectable database tables, encryption, scheduling, retention rules and simultaneous upload to this server, FTP, SFTP, Dropbox and OneDrive. Restore files, database, plugins or themes separately, or move the site to a new domain. There is no PRO version. All free.
+ * Description:       Backups, restores and migrations for the whole WordPress installation ("afrit" is Icelandic for "copy"). Incremental file backups, selectable database tables, encryption, scheduling, retention rules and simultaneous upload to this server, FTP, SFTP, Dropbox and OneDrive. Restore files, database, plugins or themes separately, or move the site to a new domain. There is no PRO version. All free.
  * Version:           1.0.0
  * Requires at least: 6.5
  * Requires PHP:      8.1

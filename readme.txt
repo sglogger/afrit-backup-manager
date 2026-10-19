@@ -12,7 +12,7 @@ Incremental backups, restores and migrations of the whole WordPress installation
 
 == Description ==
 
-Afrit Backup Manager backs up your complete WordPress installation — core, plugins, themes, uploads, every other file and the database — restores any part of it on its own, and moves the site to a new domain or host.
+Afrit Backup Manager ("afrit" is Icelandic for "copy") backs up your complete WordPress installation — core, plugins, themes, uploads, every other file and the database — restores any part of it on its own, and moves the site to a new domain or host.
 
 **Every feature is included. There is no PRO version, no upsell and no account to create. All free.**
 
@@ -73,6 +73,10 @@ Every backup, restore and migration is recorded: when it ran, what triggered it,
 **WP-CLI**
 
 `wp afbm backup`, `restore`, `list`, `keep`, `migrate`, `prune`, `rescan` and `status`.
+
+**About the name**
+
+"Afrit" is Icelandic for "copy", "duplicate" — the word Icelanders build their own term for a backup from: *öryggisafrit*, literally "safety copy". Which is fairly close to the entire job description: keep a good copy, and give it back the moment it is needed.
 
 == External services ==
 

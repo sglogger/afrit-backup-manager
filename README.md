@@ -8,6 +8,12 @@ separately, or move the site to a new domain or host.
 
 **There is no PRO version. Every feature is free, and will stay that way.**
 
+**About the name:** *afrit* is Icelandic for "copy", "duplicate" — Icelandic
+builds its word for a backup from it: *öryggisafrit*, literally "safety copy".
+Which is fairly close to the entire job description: keep a good copy, and
+give it back the moment it is needed. The sibling plugin *Vokull Security
+Center* takes its name from Icelandic as well.
+
 This README is the developer manual's front page. The detailed documentation
 lives in [`docs/`](docs/README.md); the user-facing description is in
 [`readme.txt`](readme.txt).

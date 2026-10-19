@@ -7,6 +7,10 @@ All notable changes to this project are documented here. The format follows
 
 ## [1.0.0] — 2026-10-19
 
+The name: *afrit* is Icelandic for "copy" — the root of *öryggisafrit*,
+"safety copy", the Icelandic word for a backup. The plugin Description and
+readme.txt say so, as in the sibling plugin Vokull Security Center.
+
 ### Security
 - Strict allow-list for SQL statements during restore; manipulated dumps abort before the live database is touched.
 - Custom backup directories are validated; protection files never overwrite foreign files; uninstall deletes only marked directories.
