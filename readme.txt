@@ -4,7 +4,7 @@ Tags: backup, restore, migration, incremental backup, cloud backup
 Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 8.1
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -94,6 +94,8 @@ Terms of use: https://www.microsoft.com/servicesagreement — Privacy statement:
 
 The plugin also sends requests to its own site (loopback requests) to run backups in the background and to test that the backup directory cannot be downloaded over the web.
 
+The plugin author collects no data and operates no server for this plugin. Privacy policy: https://github.com/sglogger/afrit-backup-manager/blob/main/PRIVACY.md
+
 == Installation ==
 
 1. Install the plugin through Plugins → Add New, or upload the ZIP.
@@ -155,10 +157,23 @@ Backups cover the whole network installation. Restoring individual sites of a ne
 
 == Changelog ==
 
+= 1.0.1 =
+* Security: restores accept only the plugin's own SQL statement format; manipulated dumps abort before the live database is touched.
+* Security: custom backup directories are validated and protection files never overwrite existing files.
+* Security: FTPS verifies the server certificate (or a pinned key) and never falls back to plain FTP.
+* Security: migration keys only reach public HTTPS sources unless a private network is explicitly allowed.
+* Security: limits on key-derivation cost from encrypted files; stricter backup-directory self-test across file types.
+* New: Files tab with a clickable folder tree to include or exclude any folder.
+* New: privacy policy; WordPress Playground is detected and explained.
+* Changed: FTP/FTPS uses cURL; delete actions are proper buttons.
+
 = 1.0.0 =
 * First release.
 
 == Upgrade Notice ==
+
+= 1.0.1 =
+Security hardening of restore, FTPS, migration and the backup directory. Recommended for all users.
 
 = 1.0.0 =
 First release.

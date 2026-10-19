@@ -193,6 +193,12 @@ The template is `languages/afrit-backup-manager.pot`; the German translation to
 import there is `dev/translations/afrit-backup-manager-de_DE.po`. See
 [docs/translations.md](docs/translations.md).
 
+## Privacy
+
+The author collects nothing; the plugin runs on the site owner's server and
+sends backups only to destinations the owner configures. Full text:
+[PRIVACY.md](PRIVACY.md).
+
 ## Licence
 
 GPL-2.0-or-later. See [LICENSE.txt](LICENSE.txt).

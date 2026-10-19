@@ -185,9 +185,10 @@ find "$STAGE" \( -name '*.md' -o -name '*.po' -o -name '*.pot' -o -name '.DS_Sto
                  -o -name 'phpunit.xml*' -o -name '.editorconfig' \) \
 	-delete 2>/dev/null || true
 
-# The 1024px master is a source asset for store listings, not a runtime one:
-# nothing in the plugin references it, and it outweighs the rest of the ZIP.
-rm -f "$STAGE/assets/logos/"*-1024x1024.png
+# The 1024px master and the 64px Dropbox branding icon are source assets for
+# store and app-console listings, not runtime ones: nothing in the plugin
+# references them.
+rm -f "$STAGE/assets/logos/"*-1024x1024.png "$STAGE/assets/logos/"*-64x64.png
 
 # -----------------------------------------------------------------------------
 # Verify

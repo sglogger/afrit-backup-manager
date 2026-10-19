@@ -1,0 +1,17 @@
+# Line endings: LF everywhere. Shell scripts (package-plugin.sh,
+# dev/screenshots/run.sh) and the bash in the workflows break with CRLF, and
+# WordPress.org/SVN should receive the same bytes on every machine.
+* text=auto eol=lf
+
+# Never touch binary files.
+*.png  binary
+*.jpg  binary
+*.gif  binary
+*.ico  binary
+*.zip  binary
+*.gz   binary
+*.mo   binary
+*.enc  binary
+
+# The plugin ZIP is built from an allow list (package-plugin.sh and the
+# release workflow), not from `git archive`, so no export-ignore rules here.

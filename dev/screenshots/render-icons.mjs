@@ -25,6 +25,8 @@ const icon = async ( size, file ) => {
 
 await icon( 1024, `${ root }/assets/logos/afrit-backup-manager-icon-1024x1024.png` );
 await icon( 256, `${ root }/assets/logos/afrit-backup-manager-icon-256x256.png` );
+// 64×64: the small app icon of the Dropbox App Console (branding).
+await icon( 64, `${ root }/assets/logos/afrit-backup-manager-icon-64x64.png` );
 await icon( 256, `${ root }/.wordpress-org/icon-256x256.png` );
 await icon( 128, `${ root }/.wordpress-org/icon-128x128.png` );
 

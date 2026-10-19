@@ -144,7 +144,7 @@ jobs:
           # runtime one: nothing in the plugin references it, and at ~730 KB it
           # is twice the weight of the entire rest of the ZIP. The SVG and the
           # 256px PNG are the two that ship.
-          rm -f "$STAGE/assets/logos/"*-1024x1024.png
+          rm -f "$STAGE/assets/logos/"*-1024x1024.png "$STAGE/assets/logos/"*-64x64.png
 
       # A ZIP that carries dev scaffolding is a packaging bug, so fail the
       # release rather than publish it.

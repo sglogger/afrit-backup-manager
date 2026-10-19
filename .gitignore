@@ -1,6 +1,8 @@
 # Local dev scaffolding — not part of the shipped plugin
 docker-compose.yml
 .env
+.env.*
+!.env.example
 CLAUDE.md
 .claude/
 local_wp_core/
@@ -18,13 +20,19 @@ vendor/
 *.zip
 *.log
 
-# OS
+# OS / editors
 .DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*~
 
 # Dev environment (second site, screenshots tooling, build output)
 local_wp_target/
 dist/
 node_modules/
+dev/screenshots/test-results/
 
 # Self-signed certificate of the FTPS test server (generated locally)
 dev/ftp-tls/
