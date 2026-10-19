@@ -5,6 +5,16 @@ All notable changes to this project are documented here. The format follows
 [Semantic Versioning](https://semver.org/). Mirror every entry into
 `readme.txt` → `== Changelog ==`.
 
+## [1.0.2] — 2026-10-19
+
+### Changed
+- The site-wide warning "backups can be downloaded over the internet" can be dismissed per user until the next self-test, disappears by itself once the test passes, and stays visible on the plugin's own screens (WordPress.org guideline 11).
+- readme.txt: "What makes it different" and "Open source" sections.
+
+### Added
+- 64×64 app icon for the Dropbox App Console (not part of the plugin ZIP).
+- `.gitattributes` (LF line endings) and `.editorconfig`.
+
 ## [1.0.1] — 2026-10-19
 
 The name: *afrit* is Icelandic for "copy" — the root of *öryggisafrit*,
