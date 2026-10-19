@@ -146,6 +146,14 @@ jobs:
           # 256px PNG are the two that ship.
           rm -f "$STAGE/assets/logos/"*-1024x1024.png "$STAGE/assets/logos/"*-64x64.png
 
+          # Build scripts, archives and tool configs that dependencies carry
+          # along. WordPress.org refuses ZIPs with *.sh or *.phar files.
+          find "$STAGE/vendor" -type f \( -name '*.sh' -o -name '*.phar' -o -name '*.phar.*' \
+            -o -name 'psalm*.xml' -o -name 'psalm-*.php' -o -name 'phpstan*' -o -name 'phpunit*' \
+            -o -name '*.yml' -o -name '*.yaml' -o -name '*.dist' -o -name 'Makefile' \
+            -o -name '.editorconfig' -o -name '.gitattributes' -o -name '.gitignore' \) \
+            -delete 2>/dev/null || true
+
       # A ZIP that carries dev scaffolding is a packaging bug, so fail the
       # release rather than publish it.
       - name: Verify nothing unwanted was staged
@@ -160,6 +168,12 @@ jobs:
           ANYWHERE='docker-compose|CLAUDE\.md|/\.env|local_wp_core|local_wp_target|db_data|node_modules|/\.git|/_?tests?/|/steven/|\.pot?$|\.mo$|\.zip$|\.Dockerfile$'
           if find "$STAGE" | grep -Ei "$ANYWHERE"; then
             echo "::error::development files found in the staged plugin (listed above)"
+            exit 1
+          fi
+
+          # File types the WordPress.org upload refuses, anywhere in the tree.
+          if find "$STAGE" -type f | grep -Ei '\.(sh|phar|exe|bat|cmd|ps1|py|rb|pl|jar|so|dll|dylib|bin|com|msi)$'; then
+            echo "::error::files of a type WordPress.org does not accept are in the staged plugin (listed above)"
             exit 1
           fi
 

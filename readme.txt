@@ -4,7 +4,7 @@ Tags: backup, restore, migration, incremental backup, cloud backup
 Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 8.1
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -168,6 +168,9 @@ Backups cover the whole network installation. Restoring individual sites of a ne
 
 == Changelog ==
 
+= 1.0.3 =
+* Changed: smaller, cleaner package — an unused PHP 5 compatibility library and build files of bundled libraries are no longer included.
+
 = 1.0.2 =
 * Changed: the warning about web-accessible backups can be dismissed until the next self-test and disappears once the problem is fixed.
 * Changed: readme explains what sets the plugin apart and where the source code lives.
@@ -186,6 +189,9 @@ Backups cover the whole network installation. Restoring individual sites of a ne
 * First release.
 
 == Upgrade Notice ==
+
+= 1.0.3 =
+Packaging clean-up, no functional changes. Safe to update.
 
 = 1.0.2 =
 Smaller admin notice improvements. Safe to update.

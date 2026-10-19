@@ -5,6 +5,15 @@ All notable changes to this project are documented here. The format follows
 [Semantic Versioning](https://semver.org/). Mirror every entry into
 `readme.txt` → `== Changelog ==`.
 
+## [1.0.3] — 2026-10-19
+
+### Removed
+- The unused PHP 5 polyfill `paragonie/random_compat` (pulled in by phpseclib) is no longer installed (Composer `replace`). PHP 8.1+ has `random_bytes()` built in.
+
+### Changed
+- Packaging: build scripts, PHAR files and tool configurations that dependencies carry along are removed from the plugin ZIP. WordPress.org rejected the upload because of `vendor/paragonie/random_compat/build-phar.sh`.
+- Packaging: `package-plugin.sh` and the release workflow fail the build if a file type WordPress.org refuses (`.sh`, `.phar`, `.exe`, `.bat`, `.py`, `.jar`, …) ever appears in the ZIP.
+
 ## [1.0.2] — 2026-10-19
 
 ### Changed

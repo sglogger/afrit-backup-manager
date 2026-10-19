@@ -180,6 +180,15 @@ find "$STAGE/vendor" -type d \
 	   -o -name examples -o -name .github -o -name bin \) \
 	-prune -exec rm -rf {} + 2>/dev/null || true
 
+# Build scripts, archives and tool configs that dependencies carry along.
+# WordPress.org refuses plugin ZIPs containing executable scripts such as
+# *.sh or *.phar ("unexpected files"), and none of this runs in a plugin.
+find "$STAGE/vendor" -type f \( -name '*.sh' -o -name '*.phar' -o -name '*.phar.*' \
+	-o -name 'psalm*.xml' -o -name 'psalm-*.php' -o -name 'phpstan*' -o -name 'phpunit*' \
+	-o -name '*.yml' -o -name '*.yaml' -o -name '*.dist' -o -name 'Makefile' \
+	-o -name '.editorconfig' -o -name '.gitattributes' -o -name '.gitignore' \) \
+	-delete 2>/dev/null || true
+
 find "$STAGE" \( -name '*.md' -o -name '*.po' -o -name '*.pot' -o -name '.DS_Store' \
                  -o -name '.gitignore' -o -name '.gitattributes' \
                  -o -name 'phpunit.xml*' -o -name '.editorconfig' \) \
@@ -201,6 +210,12 @@ say 'Verifying the staged tree'
 ANYWHERE='docker-compose|CLAUDE\.md|/\.env|local_wp_core|local_wp_target|db_data|node_modules|/\.git|/_?tests?/|/steven/|\.pot?$|\.mo$|\.zip$|\.Dockerfile$'
 if find "$STAGE" | grep -Ei "$ANYWHERE"; then
 	die 'development files found in the staged plugin (listed above)'
+fi
+
+# File types the WordPress.org upload refuses, anywhere in the tree.
+FORBIDDEN_TYPES='\.(sh|phar|exe|bat|cmd|ps1|py|rb|pl|jar|so|dll|dylib|bin|com|msi)$'
+if find "$STAGE" -type f | grep -Ei "$FORBIDDEN_TYPES"; then
+	die 'files of a type WordPress.org does not accept are in the staged plugin (listed above)'
 fi
 
 # Tooling config is only forbidden at the plugin root: a vendored package

@@ -12,8 +12,9 @@
    Plugin Check on the built ZIP.
 4. **Build** locally: `./package-plugin.sh [-o DIR] [--keep-stage]`.
    - allow-list staging (`afrit-backup-manager.php uninstall.php index.php readme.txt LICENSE.txt composer.json includes admin assets`)
-   - `composer install --no-dev` in the stage (local Composer or `composer:2` in Docker)
-   - prunes vendor tests/docs, `.po/.pot/.mo`, the 1024 px icon
+   - `composer install --no-dev` in the stage (local Composer or `composer:2` in Docker); `paragonie/random_compat` is `replace`d in composer.json — a PHP 5 polyfill phpseclib requires, useless on PHP 8.1, and the source of a `build-phar.sh` WordPress.org refuses
+   - prunes vendor tests/docs, build scripts, PHAR files and tool configs, `.po/.pot/.mo`, the 1024 px and 64 px icons
+   - fails on file types WordPress.org refuses (`.sh`, `.phar`, `.exe`, …) anywhere in the ZIP
    - fails on any dev file (`docker-compose`, `local_wp_*`, `db_data`, `tests`, `dev`, `docs`, …) or missing runtime dependency (phpseclib)
 5. **Publish**: push to `main`. `auto-tag.yml` creates tag `v<version>` and a
    GitHub release with the same ZIP; `deploy-to-wordpress-org.yml` syncs trunk,
