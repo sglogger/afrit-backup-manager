@@ -1,0 +1,2656 @@
+# German (Germany) translation for Afrit Backup Manager.
+# Copyright (C) 2026 Steven Glogger
+# This file is distributed under the GPL-2.0-or-later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Afrit Backup Manager 1.0.0\n"
+"Report-Msgid-Bugs-To: https://github.com/sglogger/afrit-backup-manager/"
+"issues\n"
+"POT-Creation-Date: 2026-10-19T14:31:14+00:00\n"
+"PO-Revision-Date: 2026-10-19 12:00+0000\n"
+"Last-Translator: Steven Glogger\n"
+"Language-Team: German\n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: afrit-backup-manager\n"
+
+#. Plugin Name of the plugin
+#: afrit-backup-manager.php
+msgid "Afrit Backup Manager"
+msgstr "Afrit Backup Manager"
+
+#. Plugin URI of the plugin
+#: afrit-backup-manager.php
+msgid "https://github.com/sglogger/afrit-backup-manager"
+msgstr "https://github.com/sglogger/afrit-backup-manager"
+
+#. Description of the plugin
+#: afrit-backup-manager.php
+msgid ""
+"Backups, restores and migrations for the whole WordPress installation. "
+"Incremental file backups, selectable database tables, encryption, "
+"scheduling, retention rules and simultaneous upload to this server, FTP, "
+"SFTP, Dropbox and OneDrive. Restore files, database, plugins or themes "
+"separately, or move the site to a new domain. There is no PRO version. All "
+"free."
+msgstr ""
+"Backups, Wiederherstellungen und Migrationen für die gesamte WordPress-"
+"Installation. Inkrementelle Datei-Backups, auswählbare Datenbanktabellen, "
+"Verschlüsselung, Zeitpläne, Aufbewahrungsregeln und gleichzeitiger Upload "
+"auf diesen Server, per FTP und SFTP sowie zu Dropbox und OneDrive. Stelle "
+"Dateien, Datenbank, Plugins oder Themes getrennt wieder her oder ziehe die "
+"Website auf eine neue Domain um. Es gibt keine PRO-Version. Alles kostenlos."
+
+#. Author of the plugin
+#: afrit-backup-manager.php
+msgid "Steven Glogger"
+msgstr "Steven Glogger"
+
+#. Author URI of the plugin
+#: afrit-backup-manager.php
+msgid "https://www.glogger.ch"
+msgstr "https://www.glogger.ch"
+
+#: admin/class-admin-actions.php:90
+msgid "Migration package"
+msgstr "Migrationspaket"
+
+#: admin/class-admin-actions.php:233
+msgid "This is a test message from Afrit Backup Manager."
+msgstr "Dies ist eine Testnachricht von Afrit Backup Manager."
+
+#: admin/class-admin-actions.php:322
+#: includes/report/class-run-repository.php:217
+msgid "Before restore"
+msgstr "Vor der Wiederherstellung"
+
+#: admin/class-admin.php:61 admin/class-admin.php:62
+#: admin/views/page-dashboard.php:47
+msgid "Backup Manager"
+msgstr "Backup Manager"
+
+#: admin/class-admin.php:71 admin/class-admin.php:102
+msgid "Dashboard"
+msgstr "Dashboard"
+
+#: admin/class-admin.php:72 admin/views/page-backups.php:20
+#: admin/views/page-restore.php:24
+msgid "Backups"
+msgstr "Backups"
+
+#: admin/class-admin.php:73 admin/views/page-migration.php:31
+#: includes/report/class-run-repository.php:215
+msgid "Migration"
+msgstr "Migration"
+
+#: admin/class-admin.php:74 admin/views/page-reports.php:21
+msgid "Reports"
+msgstr "Berichte"
+
+#. translators: %d: days
+#: admin/class-admin.php:75 admin/views/page-settings.php:29
+#: admin/views/settings/tab-storage.php:107
+msgid "Settings"
+msgstr "Einstellungen"
+
+#: admin/class-admin.php:84 admin/class-backups-list-table.php:222
+#: admin/views/page-restore.php:21 includes/report/class-run-repository.php:197
+msgid "Restore"
+msgstr "Wiederherstellen"
+
+#: admin/class-admin.php:131 admin/views/page-dashboard.php:69
+#: includes/report/class-run-repository.php:165
+msgid "Running"
+msgstr "Läuft"
+
+#: admin/class-admin.php:132
+msgid "Queued"
+msgstr "In der Warteschlange"
+
+#: admin/class-admin.php:133
+msgid "Finished. Reloading…"
+msgstr "Abgeschlossen. Seite wird neu geladen …"
+
+#: admin/class-admin.php:134
+msgid ""
+"The status could not be read. If a database restore just finished, log in "
+"again."
+msgstr ""
+"Der Status konnte nicht gelesen werden. Falls gerade eine Datenbank-"
+"Wiederherstellung abgeschlossen wurde, melde dich erneut an."
+
+#. translators: 1: file name, 2: percentage
+#: admin/class-admin.php:136
+#, php-format
+msgid "Uploading %1$s: %2$s%%"
+msgstr "%1$s wird hochgeladen: %2$s%%"
+
+#: admin/class-admin.php:137
+msgid "Upload complete. Reloading…"
+msgstr "Upload abgeschlossen. Seite wird neu geladen …"
+
+#. translators: %s: error message
+#: admin/class-admin.php:139
+#, php-format
+msgid "Upload failed: %s"
+msgstr "Upload fehlgeschlagen: %s"
+
+#: admin/class-admin.php:140
+msgid "Delete this backup from every location? This cannot be undone."
+msgstr ""
+"Dieses Backup an allen Speicherorten löschen? Dies kann nicht rückgängig "
+"gemacht werden."
+
+#: admin/class-admin.php:141
+msgid "Restore now? The selected parts of this site will be overwritten."
+msgstr ""
+"Jetzt wiederherstellen? Die ausgewählten Teile dieser Website werden "
+"überschrieben."
+
+#: admin/class-admin.php:142
+msgid "Remove this destination? Backups already stored there are not deleted."
+msgstr ""
+"Dieses Speicherziel entfernen? Dort bereits gespeicherte Backups werden "
+"nicht gelöscht."
+
+#: admin/class-admin.php:143
+msgid "Copied"
+msgstr "Kopiert"
+
+#: admin/class-admin.php:144
+msgid "The folders could not be loaded."
+msgstr "Die Ordner konnten nicht geladen werden."
+
+#: admin/class-admin.php:145
+msgid "Only the first 500 folders are shown."
+msgstr "Es werden nur die ersten 500 Ordner angezeigt."
+
+#: admin/class-admin.php:146 admin/views/settings/tab-files.php:31
+msgid "rule"
+msgstr "Regel"
+
+#: admin/class-admin.php:147 admin/views/settings/tab-files.php:32
+msgid "default"
+msgstr "Standard"
+
+#: admin/class-admin.php:148
+msgid "Reset to inherited"
+msgstr "Auf geerbte Einstellung zurücksetzen"
+
+#: admin/class-admin.php:149 admin/views/settings/tab-files.php:29
+msgid "included"
+msgstr "eingeschlossen"
+
+#: admin/class-admin.php:150 admin/views/settings/tab-files.php:30
+msgid "excluded"
+msgstr "ausgeschlossen"
+
+#: admin/class-admin.php:151
+msgid ""
+"No folder rules yet: everything in the selected parts is backed up, except "
+"the folders skipped by default."
+msgstr ""
+"Noch keine Ordnerregeln: Alles in den ausgewählten Bereichen wird gesichert, "
+"außer den standardmäßig übersprungenen Ordnern."
+
+#: admin/class-admin.php:152 admin/views/page-restore.php:105
+#: admin/views/settings/tab-security.php:85
+#: admin/views/settings/tab-storage.php:137
+#: admin/views/settings/tab-storage.php:272
+msgid "Remove"
+msgstr "Entfernen"
+
+#: admin/class-admin.php:153
+msgid "Show subfolders"
+msgstr "Unterordner anzeigen"
+
+#: admin/class-admin.php:184
+msgid "Backup Manager:"
+msgstr "Backup Manager:"
+
+#: admin/class-admin.php:185
+msgid ""
+"your backup files can be downloaded over the internet by anyone who knows "
+"their address."
+msgstr ""
+"Deine Backup-Dateien können von jedem, der ihre Adresse kennt, über das "
+"Internet heruntergeladen werden."
+
+#: admin/class-admin.php:187
+msgid "Fix this now"
+msgstr "Jetzt beheben"
+
+#: admin/class-admin.php:196
+msgid ""
+"The PHP zip extension (ZipArchive) is missing. File backups cannot run until "
+"your host enables it."
+msgstr ""
+"Die PHP-Erweiterung zip (ZipArchive) fehlt. Datei-Backups können erst "
+"ausgeführt werden, wenn dein Hoster sie aktiviert."
+
+#: admin/class-admin.php:200
+msgid ""
+"This is a multisite network. Backups cover the whole installation; restoring "
+"single sites of a network is not supported."
+msgstr ""
+"Dies ist ein Multisite-Netzwerk. Backups umfassen die gesamte Installation; "
+"das Wiederherstellen einzelner Websites eines Netzwerks wird nicht "
+"unterstützt."
+
+#: admin/class-admin.php:279 admin/class-admin.php:420
+#: includes/access/class-password-gate.php:136
+#: includes/storage/class-oauth.php:134
+msgid "You do not have permission to do this."
+msgstr "Du hast keine Berechtigung, dies zu tun."
+
+#: admin/class-admin.php:285 admin/class-admin.php:431
+msgid "Backup Manager is locked. Enter its password first."
+msgstr "Backup Manager ist gesperrt. Gib zuerst das Passwort dafür ein."
+
+#: admin/class-admin.php:327
+msgid "Settings saved."
+msgstr "Einstellungen gespeichert."
+
+#: admin/class-admin.php:328
+msgid ""
+"All set. Your first backup is running now; scheduled backups take over from "
+"tonight."
+msgstr ""
+"Alles eingerichtet. Dein erstes Backup läuft jetzt; ab heute Nacht "
+"übernehmen die geplanten Backups."
+
+#: admin/class-admin.php:329
+msgid ""
+"Backup started. You can leave this page; it continues in the background."
+msgstr ""
+"Backup gestartet. Du kannst diese Seite verlassen; es läuft im Hintergrund "
+"weiter."
+
+#: admin/class-admin.php:330
+msgid "Restore started. Keep this page open to follow it."
+msgstr ""
+"Wiederherstellung gestartet. Lass diese Seite geöffnet, um den Fortschritt "
+"zu verfolgen."
+
+#: admin/class-admin.php:331
+msgid ""
+"Import started. When it has finished, the backup appears in the list and can "
+"be restored."
+msgstr ""
+"Import gestartet. Sobald er abgeschlossen ist, erscheint das Backup in der "
+"Liste und kann wiederhergestellt werden."
+
+#: admin/class-admin.php:332
+msgid "The running job will stop at its next step."
+msgstr "Der laufende Vorgang wird beim nächsten Schritt angehalten."
+
+#: admin/class-admin.php:333
+msgid "Backup deleted."
+msgstr "Backup gelöscht."
+
+#: admin/class-admin.php:334
+msgid ""
+"Marked as keep. Automatic retention will never delete this backup or the "
+"backups it depends on."
+msgstr ""
+"Als „Behalten“ markiert. Die automatische Aufbewahrung löscht dieses Backup "
+"und die Backups, auf denen es aufbaut, nie."
+
+#: admin/class-admin.php:335
+msgid "Keep mark removed. The backup is subject to the retention rules again."
+msgstr ""
+"Markierung „Behalten“ entfernt. Für das Backup gelten wieder die "
+"Aufbewahrungsregeln."
+
+#: admin/class-admin.php:336
+msgid ""
+"This backup, or an incremental backup that depends on it, is marked as keep. "
+"Remove the mark first."
+msgstr ""
+"Dieses Backup oder ein inkrementelles Backup, das darauf aufbaut, ist als "
+"„Behalten“ markiert. Entferne zuerst die Markierung."
+
+#: admin/class-admin.php:337
+msgid ""
+"The backup could not be deleted from every location. It stays listed for the "
+"remaining copies."
+msgstr ""
+"Das Backup konnte nicht an allen Speicherorten gelöscht werden. Es bleibt "
+"für die verbleibenden Kopien in der Liste."
+
+#: admin/class-admin.php:338
+msgid "The backup list has been rebuilt from all locations."
+msgstr "Die Backup-Liste wurde aus allen Speicherorten neu aufgebaut."
+
+#: admin/class-admin.php:339
+msgid "Another job is already running. Wait for it to finish."
+msgstr "Es läuft bereits ein anderer Vorgang. Warte, bis er abgeschlossen ist."
+
+#: admin/class-admin.php:340
+msgid "Nothing was selected."
+msgstr "Es wurde nichts ausgewählt."
+
+#: admin/class-admin.php:341
+msgid "The request was not valid."
+msgstr "Die Anfrage war ungültig."
+
+#: admin/class-admin.php:342
+msgid "The passphrase is wrong."
+msgstr "Die Passphrase ist falsch."
+
+#: admin/class-admin.php:343
+msgid ""
+"The passphrase must have at least 12 characters, and both fields must match."
+msgstr ""
+"Die Passphrase muss mindestens 12 Zeichen lang sein und beide Felder müssen "
+"übereinstimmen."
+
+#: admin/class-admin.php:344
+msgid "Destination saved."
+msgstr "Speicherziel gespeichert."
+
+#: admin/class-admin.php:345
+msgid "Destination removed. Backups already stored there were not deleted."
+msgstr ""
+"Speicherziel entfernt. Bereits dort gespeicherte Backups wurden nicht "
+"gelöscht."
+
+#: admin/class-admin.php:346
+msgid "Connection test passed: the destination is reachable and writable."
+msgstr ""
+"Verbindungstest erfolgreich: Das Speicherziel ist erreichbar und "
+"beschreibbar."
+
+#: admin/class-admin.php:347
+msgid "Connection test failed."
+msgstr "Verbindungstest fehlgeschlagen."
+
+#: admin/class-admin.php:348
+msgid "Connected. The destination is ready to use."
+msgstr "Verbunden. Das Speicherziel ist einsatzbereit."
+
+#: admin/class-admin.php:349
+msgid ""
+"The connection could not be completed. A code is valid only once and for a "
+"few minutes — press \"Connect\" again for a new one. With your own app, also "
+"check its credentials and redirect URI."
+msgstr ""
+"Die Verbindung konnte nicht hergestellt werden. Ein Code gilt nur einmal und "
+"nur wenige Minuten – klicke erneut auf „Verbinden“, um einen neuen zu "
+"erhalten. Bei einer eigenen App prüfe zusätzlich deren Zugangsdaten und die "
+"Redirect-URI."
+
+#: admin/class-admin.php:350
+msgid "The test e-mail was accepted for delivery."
+msgstr "Die Test-E-Mail wurde zur Zustellung angenommen."
+
+#: admin/class-admin.php:351
+msgid ""
+"WordPress could not send the e-mail. Check the site's mail configuration."
+msgstr ""
+"WordPress konnte die E-Mail nicht senden. Prüfe die E-Mail-Konfiguration der "
+"Website."
+
+#: admin/class-admin.php:352
+msgid "The backup directory has been tested."
+msgstr "Das Backup-Verzeichnis wurde getestet."
+
+#: admin/class-admin.php:353
+msgid ""
+"That backup directory could not be created or is not writable. The previous "
+"one is still in use."
+msgstr ""
+"Dieses Backup-Verzeichnis konnte nicht erstellt werden oder ist nicht "
+"beschreibbar. Das bisherige wird weiterhin verwendet."
+
+#: admin/class-admin.php:354
+msgid ""
+"That folder cannot hold backups: it is WordPress itself, wp-content, "
+"uploads, plugins or themes, a parent of one of them, or inside code folders. "
+"Choose a separate folder, ideally outside the web root. The previous one is "
+"still in use."
+msgstr "Dieser Ordner kann keine Backups aufnehmen: Er ist WordPress selbst, wp-content, uploads, plugins oder themes, ein übergeordneter Ordner davon oder liegt in einem Code-Ordner. Wähle einen eigenen Ordner, idealerweise außerhalb des Web-Roots. Der bisherige Ordner bleibt in Verwendung."
+
+#: admin/class-admin.php:355
+msgid ""
+"That folder already contains other files. Choose a new or empty folder used "
+"only for backups. The previous one is still in use."
+msgstr "Dieser Ordner enthält bereits andere Dateien. Wähle einen neuen oder leeren Ordner, der nur für Backups genutzt wird. Der bisherige Ordner bleibt in Verwendung."
+
+#: admin/class-admin.php:356
+msgid "The Backup Manager password is set."
+msgstr "Das Backup-Manager-Passwort wurde festgelegt."
+
+#: admin/class-admin.php:357
+msgid "The Backup Manager password has been removed."
+msgstr "Das Backup-Manager-Passwort wurde entfernt."
+
+#: admin/class-admin.php:358
+msgid "The current password is wrong."
+msgstr "Das aktuelle Passwort ist falsch."
+
+#: admin/class-admin.php:359
+msgid ""
+"The password must have at least 10 characters, and both fields must match."
+msgstr ""
+"Das Passwort muss mindestens 10 Zeichen lang sein und beide Felder müssen "
+"übereinstimmen."
+
+#: admin/class-admin.php:360
+msgid "Wrong password."
+msgstr "Falsches Passwort."
+
+#: admin/class-admin.php:361
+msgid "Too many wrong passwords. Try again in 15 minutes."
+msgstr "Zu viele falsche Passwörter. Versuche es in 15 Minuten erneut."
+
+#: admin/class-admin.php:362
+msgid "Migration key created. Copy it now; it is shown only once."
+msgstr ""
+"Migrationsschlüssel erstellt. Kopiere ihn jetzt; er wird nur einmal "
+"angezeigt."
+
+#: admin/class-admin.php:363
+msgid "A migration key needs a backup whose files are stored on this server."
+msgstr ""
+"Für einen Migrationsschlüssel wird ein Backup benötigt, dessen Dateien auf "
+"diesem Server gespeichert sind."
+
+#: admin/class-admin.php:364
+msgid "That is not a valid migration key."
+msgstr "Das ist kein gültiger Migrationsschlüssel."
+
+#: admin/class-admin.php:365
+msgid "All migration keys have been revoked."
+msgstr "Alle Migrationsschlüssel wurden widerrufen."
+
+#: admin/class-admin.php:436
+msgid "Unknown file."
+msgstr "Unbekannte Datei."
+
+#: admin/class-admin.php:441
+msgid ""
+"This file is not stored on this server. Download it from the remote "
+"destination, or restore from there directly."
+msgstr ""
+"Diese Datei ist nicht auf diesem Server gespeichert. Lade sie vom externen "
+"Speicherziel herunter oder stelle direkt von dort wieder her."
+
+#: admin/class-admin.php:470
+msgid "Full"
+msgstr "Vollständig"
+
+#: admin/class-admin.php:472
+msgid "Incremental"
+msgstr "Inkrementell"
+
+#: admin/class-admin.php:474
+msgid "Partial"
+msgstr "Teilweise"
+
+#: admin/class-admin.php:476 admin/views/page-settings.php:22
+#: includes/backup/class-components.php:104
+msgid "Database"
+msgstr "Datenbank"
+
+#: admin/class-ajax.php:66
+msgid "WordPress directory"
+msgstr "WordPress-Verzeichnis"
+
+#: admin/class-ajax.php:165
+msgid "This is not a file of an Afrit backup set."
+msgstr "Dies ist keine Datei eines Afrit-Backup-Satzes."
+
+#: admin/class-ajax.php:171
+msgid "The upload did not arrive."
+msgstr "Der Upload ist nicht angekommen."
+
+#: admin/class-backups-list-table.php:37
+msgid "Date"
+msgstr "Datum"
+
+#: admin/class-backups-list-table.php:38
+#: admin/views/settings/tab-storage.php:94
+msgid "Type"
+msgstr "Typ"
+
+#: admin/class-backups-list-table.php:39
+msgid "Contents"
+msgstr "Inhalt"
+
+#: admin/class-backups-list-table.php:40 admin/class-runs-list-table.php:41
+#: admin/views/page-reports.php:38 admin/views/page-restore.php:55
+#: includes/report/class-email-report.php:84
+msgid "Size"
+msgstr "Größe"
+
+#: admin/class-backups-list-table.php:41 admin/views/page-reports.php:43
+#: includes/report/class-email-report.php:93
+msgid "Stored on"
+msgstr "Gespeichert auf"
+
+#: admin/class-backups-list-table.php:42
+#: admin/views/settings/tab-storage.php:97
+msgid "Actions"
+msgstr "Aktionen"
+
+#: admin/class-backups-list-table.php:84 admin/class-runs-list-table.php:85
+msgid "All"
+msgstr "Alle"
+
+#: admin/class-backups-list-table.php:89
+msgid "Kept"
+msgstr "Behalten"
+
+#: admin/class-backups-list-table.php:105
+msgid "No backups yet."
+msgstr "Noch keine Backups."
+
+#. translators: %s: URL of the site the backup comes from
+#: admin/class-backups-list-table.php:123
+#, php-format
+msgid "From %s"
+msgstr "Von %s"
+
+#: admin/class-backups-list-table.php:136
+#: admin/class-backups-list-table.php:240
+msgid "Keep"
+msgstr "Behalten"
+
+#: admin/class-backups-list-table.php:138
+msgid "Kept with its chain (a backup in it is marked)"
+msgstr "Mit seiner Kette behalten (ein Backup darin ist markiert)"
+
+#: admin/class-backups-list-table.php:142
+msgid "Encrypted"
+msgstr "Verschlüsselt"
+
+#. translators: 1: changed files, 2: deleted files
+#: admin/class-backups-list-table.php:177
+#, php-format
+msgid "%1$s changed, %2$s deleted"
+msgstr "%1$s geändert, %2$s gelöscht"
+
+#. translators: %s: number of files
+#: admin/class-backups-list-table.php:184 admin/class-runs-list-table.php:146
+#, php-format
+msgid "%s files"
+msgstr "%s Dateien"
+
+#. translators: %d: number of tables
+#: admin/class-backups-list-table.php:189 admin/class-runs-list-table.php:142
+#, php-format
+msgid "%d table"
+msgid_plural "%d tables"
+msgstr[0] "%d Tabelle"
+msgstr[1] "%d Tabellen"
+
+#: admin/class-backups-list-table.php:225
+msgid "Download"
+msgstr "Herunterladen"
+
+#: admin/class-backups-list-table.php:238
+msgid "Kept backups are never deleted by the retention rules."
+msgstr ""
+"Als „Behalten“ markierte Backups werden von den Aufbewahrungsregeln nie "
+"gelöscht."
+
+#: admin/class-backups-list-table.php:240
+msgid "Unkeep"
+msgstr "Nicht mehr behalten"
+
+#: admin/class-backups-list-table.php:248
+msgid "Delete"
+msgstr "Löschen"
+
+#. translators: %d: number of incremental backups
+#: admin/class-backups-list-table.php:255
+#, php-format
+msgid "Deleting also removes %d later incremental backup."
+msgid_plural "Deleting also removes %d later incremental backups."
+msgstr[0] "Beim Löschen wird auch %d späteres inkrementelles Backup entfernt."
+msgstr[1] "Beim Löschen werden auch %d spätere inkrementelle Backups entfernt."
+
+#: admin/class-runs-list-table.php:37 admin/views/page-reports.php:31
+#: includes/report/class-email-report.php:71
+msgid "Started"
+msgstr "Gestartet"
+
+#: admin/class-runs-list-table.php:38 admin/views/page-reports.php:29
+msgid "Job"
+msgstr "Vorgang"
+
+#: admin/class-runs-list-table.php:39 admin/views/page-reports.php:30
+msgid "Result"
+msgstr "Ergebnis"
+
+#: admin/class-runs-list-table.php:40 admin/views/page-reports.php:36
+#: includes/report/class-email-report.php:79
+msgid "Included"
+msgstr "Enthalten"
+
+#: admin/class-runs-list-table.php:42
+msgid "Duration"
+msgstr "Dauer"
+
+#: admin/class-runs-list-table.php:68 admin/views/page-dashboard.php:197
+msgid "Nothing has run yet."
+msgstr "Bisher wurde noch nichts ausgeführt."
+
+#: admin/class-runs-list-table.php:177 admin/views/page-dashboard.php:206
+msgid "Details"
+msgstr "Details"
+
+#: admin/views/page-backups.php:24
+msgid "Rescan all locations"
+msgstr "Alle Speicherorte neu einlesen"
+
+#: admin/views/page-backups.php:27
+msgid "Upload a backup"
+msgstr "Ein Backup hochladen"
+
+#: admin/views/page-backups.php:29
+msgid ""
+"Select all files of one backup set (the .manifest.json and every file "
+"starting with the same name). They are uploaded in chunks, so size limits of "
+"the server do not apply."
+msgstr ""
+"Wähle alle Dateien eines Backup-Satzes aus (die .manifest.json und jede "
+"Datei, die mit demselben Namen beginnt). Sie werden in Teilstücken "
+"hochgeladen, daher gelten die Größenbeschränkungen des Servers nicht."
+
+#: admin/views/page-backups.php:37
+msgid ""
+"Incremental backups only contain files that changed; restoring one "
+"automatically uses the full backup and every incremental before it. "
+"Downloads are only possible while signed in here — backup files are never "
+"reachable by URL."
+msgstr ""
+"Inkrementelle Backups enthalten nur geänderte Dateien; beim Wiederherstellen "
+"eines solchen Backups werden automatisch das vollständige Backup und alle "
+"vorherigen inkrementellen Backups verwendet. Downloads sind nur möglich, "
+"solange du hier angemeldet bist – Backup-Dateien sind niemals über eine URL "
+"erreichbar."
+
+#: admin/views/page-dashboard.php:51
+msgid "Set up backups in one click"
+msgstr "Backups mit einem Klick einrichten"
+
+#: admin/views/page-dashboard.php:52
+msgid ""
+"This applies safe defaults and starts your first backup right away. "
+"Everything can be changed later under Settings."
+msgstr ""
+"Dabei werden sichere Standardeinstellungen übernommen und dein erstes Backup "
+"wird sofort gestartet. Alles kann später unter „Einstellungen“ geändert "
+"werden."
+
+#: admin/views/page-dashboard.php:54
+msgid ""
+"Files: daily at 02:00, incremental — only changed files are saved; a new "
+"full backup every 7th day"
+msgstr ""
+"Dateien: täglich um 02:00 Uhr, inkrementell – nur geänderte Dateien werden "
+"gesichert; jeden 7. Tag ein neues vollständiges Backup"
+
+#: admin/views/page-dashboard.php:55
+msgid "Database: daily at 03:00"
+msgstr "Datenbank: täglich um 03:00 Uhr"
+
+#: admin/views/page-dashboard.php:56
+msgid "Automatic backup before every WordPress, plugin and theme update"
+msgstr ""
+"Automatisches Backup vor jedem Update von WordPress, Plugins und Themes"
+
+#: admin/views/page-dashboard.php:57
+msgid "Keep 4 weeks of file backups and 14 database backups"
+msgstr "Datei-Backups von 4 Wochen und 14 Datenbank-Backups aufbewahren"
+
+#: admin/views/page-dashboard.php:58
+msgid ""
+"Stored in a protected directory on this server — add Dropbox, OneDrive, FTP "
+"or SFTP at any time"
+msgstr ""
+"Gespeichert in einem geschützten Verzeichnis auf diesem Server – Dropbox, "
+"OneDrive, FTP oder SFTP kannst du jederzeit hinzufügen"
+
+#: admin/views/page-dashboard.php:59
+msgid "E-mail to the site administrator if a backup fails"
+msgstr "E-Mail an den Website-Administrator, wenn ein Backup fehlschlägt"
+
+#: admin/views/page-dashboard.php:62
+msgid "Set up and run the first backup"
+msgstr "Einrichten und erstes Backup ausführen"
+
+#: admin/views/page-dashboard.php:74
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#. translators: 1: job kind, 2: result
+#: admin/views/page-dashboard.php:89
+#, php-format
+msgid "Last job (%1$s): %2$s."
+msgstr "Letzter Vorgang (%1$s): %2$s."
+
+#: admin/views/page-dashboard.php:96
+msgid "Report"
+msgstr "Bericht"
+
+#: admin/views/page-dashboard.php:104 admin/views/page-dashboard.php:108
+msgid "Last backup"
+msgstr "Letztes Backup"
+
+#: admin/views/page-dashboard.php:104
+msgid "None yet"
+msgstr "Noch keins"
+
+#: admin/views/page-dashboard.php:104
+msgid "Run your first backup now."
+msgstr "Führe jetzt dein erstes Backup aus."
+
+#. translators: %s: human time difference
+#: admin/views/page-dashboard.php:110
+#, php-format
+msgid "%s ago"
+msgstr "vor %s"
+
+#: admin/views/page-dashboard.php:118
+msgid "Last run"
+msgstr "Letzte Ausführung"
+
+#: admin/views/page-dashboard.php:118
+#: includes/report/class-run-repository.php:171
+msgid "Failed"
+msgstr "Fehlgeschlagen"
+
+#: admin/views/page-dashboard.php:122
+msgid "Next file backup"
+msgstr "Nächstes Datei-Backup"
+
+#: admin/views/page-dashboard.php:123 admin/views/page-dashboard.php:131
+msgid "Not scheduled"
+msgstr "Nicht geplant"
+
+#: admin/views/page-dashboard.php:130
+msgid "Next database backup"
+msgstr "Nächstes Datenbank-Backup"
+
+#: admin/views/page-dashboard.php:138
+msgid "Stored backups"
+msgstr "Gespeicherte Backups"
+
+#. translators: %s: disk space
+#: admin/views/page-dashboard.php:141
+#, php-format
+msgid "%s on this server"
+msgstr "%s auf diesem Server"
+
+#: admin/views/page-dashboard.php:147
+msgid "Destinations"
+msgstr "Speicherziele"
+
+#. translators: %d: number of remote destinations
+#: admin/views/page-dashboard.php:149
+#, php-format
+msgid "This server + %d"
+msgid_plural "This server + %d"
+msgstr[0] "Dieser Server + %d"
+msgstr[1] "Dieser Server + %d"
+
+#: admin/views/page-dashboard.php:150
+msgid "Add an off-site copy for real safety."
+msgstr "Füge für echte Sicherheit eine externe Kopie hinzu."
+
+#: admin/views/page-dashboard.php:156
+msgid "Outside the web root"
+msgstr "Außerhalb des Web-Roots"
+
+#: admin/views/page-dashboard.php:157
+msgid "Protected"
+msgstr "Geschützt"
+
+#: admin/views/page-dashboard.php:158
+msgid "EXPOSED"
+msgstr "ÖFFENTLICH ZUGÄNGLICH"
+
+#: admin/views/page-dashboard.php:159
+msgid "Not verified"
+msgstr "Nicht überprüft"
+
+#: admin/views/page-dashboard.php:163 admin/views/settings/tab-general.php:21
+#: admin/views/settings/tab-security.php:28
+msgid "Backup directory"
+msgstr "Backup-Verzeichnis"
+
+#. translators: %s: human time difference
+#: admin/views/page-dashboard.php:167
+#, php-format
+msgid "Tested %s ago"
+msgstr "Vor %s getestet"
+
+#: admin/views/page-dashboard.php:168
+msgid "Test it on the Security tab."
+msgstr "Teste es im Tab „Sicherheit“."
+
+#: admin/views/page-dashboard.php:177
+msgid "Back up now"
+msgstr "Jetzt Backup erstellen"
+
+#: admin/views/page-dashboard.php:185
+msgid "Note (optional)"
+msgstr "Notiz (optional)"
+
+#: admin/views/page-dashboard.php:188
+msgid ""
+"Everything selected: a complete backup that also serves as a migration "
+"package. Only the file parts selected: continues the incremental chain. "
+"Anything else: a partial backup."
+msgstr ""
+"Alles ausgewählt: ein vollständiges Backup, das auch als Migrationspaket "
+"dient. Nur die Dateibereiche ausgewählt: setzt die inkrementelle Kette fort. "
+"Alles andere: ein Teil-Backup."
+
+#: admin/views/page-dashboard.php:189
+msgid "Start backup"
+msgstr "Backup starten"
+
+#: admin/views/page-dashboard.php:194
+msgid "Recent activity"
+msgstr "Letzte Aktivitäten"
+
+#: admin/views/page-dashboard.php:211 admin/views/page-reports.php:24
+msgid "All reports"
+msgstr "Alle Berichte"
+
+#: admin/views/page-migration.php:33
+msgid ""
+"Move or copy this site to a new domain or host — completely, or only "
+"selected parts such as the uploads or the database. Install Afrit Backup "
+"Manager on the target site, then follow the steps below."
+msgstr ""
+"Ziehe diese Website auf eine neue Domain oder einen neuen Host um oder "
+"kopiere sie dorthin – vollständig oder nur ausgewählte Teile wie die Uploads "
+"oder die Datenbank. Installiere Afrit Backup Manager auf der Ziel-Website "
+"und folge dann den Schritten unten."
+
+#: admin/views/page-migration.php:37
+msgid "Your migration key"
+msgstr "Dein Migrationsschlüssel"
+
+#: admin/views/page-migration.php:38
+msgid ""
+"Paste it into Migration → Import on the target site within 24 hours. Anyone "
+"holding this key can download this backup, so treat it like a password."
+msgstr ""
+"Füge ihn innerhalb von 24 Stunden auf der Ziel-Website unter „Migration“ → "
+"„Backup importieren“ ein. Wer diesen Schlüssel besitzt, kann dieses Backup "
+"herunterladen – behandle ihn also wie ein Passwort."
+
+#: admin/views/page-migration.php:40
+msgid "Copy"
+msgstr "Kopieren"
+
+#: admin/views/page-migration.php:46
+msgid "Export from this site"
+msgstr "Von dieser Website exportieren"
+
+#: admin/views/page-migration.php:47
+msgid ""
+"Create a complete backup (files and database), then a migration key for it."
+msgstr ""
+"Erstelle ein vollständiges Backup (Dateien und Datenbank) und anschließend "
+"einen Migrationsschlüssel dafür."
+
+#: admin/views/page-migration.php:49
+msgid "Create migration package"
+msgstr "Migrationspaket erstellen"
+
+#: admin/views/page-migration.php:53
+msgid "Create a key for a backup"
+msgstr "Einen Schlüssel für ein Backup erstellen"
+
+#: admin/views/page-migration.php:72
+msgid "Create migration key"
+msgstr "Migrationsschlüssel erstellen"
+
+#. translators: %d: number of active keys
+#: admin/views/page-migration.php:81
+#, php-format
+msgid "%d migration key is active."
+msgid_plural "%d migration keys are active."
+msgstr[0] "%d Migrationsschlüssel ist aktiv."
+msgstr[1] "%d Migrationsschlüssel sind aktiv."
+
+#: admin/views/page-migration.php:89
+msgid "Revoke all keys"
+msgstr "Alle Schlüssel widerrufen"
+
+#: admin/views/page-migration.php:95
+msgid "Import on the target site"
+msgstr "Auf der Ziel-Website importieren"
+
+#: admin/views/page-migration.php:96
+msgid ""
+"Do this on the new site. Paste the key from the source site; the backup is "
+"copied over directly, server to server."
+msgstr ""
+"Führe dies auf der neuen Website aus. Füge den Schlüssel von der Quell-"
+"Website ein; das Backup wird direkt von Server zu Server übertragen."
+
+#: admin/views/page-migration.php:99
+msgid ""
+"The source site is on my private network (internal address, non-standard "
+"port or plain http)"
+msgstr "Die Quell-Website liegt in meinem privaten Netzwerk (interne Adresse, abweichender Port oder unverschlüsseltes http)"
+
+#: admin/views/page-migration.php:100
+msgid ""
+"Only import keys you created yourself. Without this option the target only "
+"connects to public HTTPS addresses, which keeps a manipulated key from "
+"reaching internal services."
+msgstr "Importiere nur Schlüssel, die du selbst erstellt hast. Ohne diese Option verbindet sich das Ziel nur mit öffentlichen HTTPS-Adressen; so kann ein manipulierter Schlüssel keine internen Dienste erreichen."
+
+#: admin/views/page-migration.php:101
+msgid "Import backup"
+msgstr "Backup importieren"
+
+#: admin/views/page-migration.php:103
+msgid "Other ways to bring a backup over"
+msgstr "Weitere Wege, ein Backup zu übertragen"
+
+#: admin/views/page-migration.php:105
+msgid ""
+"Shared storage: add the same Dropbox, OneDrive, FTP or SFTP destination on "
+"both sites, then use \"Rescan all locations\" on the Backups screen of the "
+"target."
+msgstr ""
+"Gemeinsamer Speicher: Füge auf beiden Websites dasselbe Dropbox-, OneDrive-, "
+"FTP- oder SFTP-Speicherziel hinzu und verwende dann „Alle Speicherorte neu "
+"einlesen“ in der Ansicht „Backups“ der Ziel-Website."
+
+#: admin/views/page-migration.php:106
+msgid ""
+"Upload: download the backup files from the source and upload them on the "
+"Backups screen of the target."
+msgstr ""
+"Hochladen: Lade die Backup-Dateien von der Quell-Website herunter und lade "
+"sie in der Ansicht „Backups“ der Ziel-Website hoch."
+
+#: admin/views/page-migration.php:111
+msgid "Restore with the new address"
+msgstr "Mit der neuen Adresse wiederherstellen"
+
+#: admin/views/page-migration.php:112
+msgid ""
+"On the target, open the imported backup on the Backups screen and choose "
+"Restore. The old address and paths are pre-filled for replacement with the "
+"new ones; add more pairs if needed. Choose only the parts you want for a "
+"selective migration — for example only Uploads, or only the database."
+msgstr ""
+"Öffne auf der Ziel-Website das importierte Backup in der Ansicht „Backups“ "
+"und wähle „Wiederherstellen“. Die alte Adresse und die alten Pfade sind "
+"bereits zum Ersetzen durch die neuen vorausgefüllt; füge bei Bedarf weitere "
+"Paare hinzu. Wähle für eine selektive Migration nur die Teile aus, die du "
+"benötigst – zum Beispiel nur die Uploads oder nur die Datenbank."
+
+#: admin/views/page-migration.php:113
+msgid "Go to Backups"
+msgstr "Zu den Backups"
+
+#: admin/views/page-reports.php:32
+msgid "Finished"
+msgstr "Abgeschlossen"
+
+#: admin/views/page-reports.php:34 admin/views/page-restore.php:52
+#: includes/report/class-email-report.php:74
+#: includes/report/class-run-repository.php:195
+msgid "Backup"
+msgstr "Backup"
+
+#: admin/views/page-reports.php:37
+msgid "Files / tables"
+msgstr "Dateien / Tabellen"
+
+#: admin/views/page-reports.php:50
+msgid "Summary"
+msgstr "Zusammenfassung"
+
+#: admin/views/page-reports.php:56
+msgid "Log"
+msgstr "Protokoll"
+
+#: admin/views/page-restore.php:24
+msgid "Choose a backup on the Backups screen."
+msgstr "Wähle in der Ansicht „Backups“ ein Backup aus."
+
+#: admin/views/page-restore.php:53
+msgid "Created"
+msgstr "Erstellt"
+
+#: admin/views/page-restore.php:54
+msgid "Source site"
+msgstr "Quell-Website"
+
+#: admin/views/page-restore.php:54
+msgid "table prefix"
+msgstr "Tabellenpräfix"
+
+#: admin/views/page-restore.php:57
+msgid "Chain"
+msgstr "Kette"
+
+#: admin/views/page-restore.php:60
+msgid ""
+"Incomplete: an earlier backup of this chain is missing. Files cannot be "
+"restored; the database can."
+msgstr ""
+"Unvollständig: Ein früheres Backup dieser Kette fehlt. Dateien können nicht "
+"wiederhergestellt werden, die Datenbank schon."
+
+#. translators: %d: number of backups
+#: admin/views/page-restore.php:62
+#, php-format
+msgid "Uses %d backups (one full backup and the incrementals up to this one)."
+msgstr ""
+"Verwendet %d Backups (ein vollständiges Backup und die inkrementellen "
+"Backups bis einschließlich diesem)."
+
+#: admin/views/page-restore.php:71
+msgid ""
+"This backup comes from a different address. The addresses and paths below "
+"are replaced during the restore so the site works at its new location."
+msgstr ""
+"Dieses Backup stammt von einer anderen Adresse. Die unten aufgeführten "
+"Adressen und Pfade werden bei der Wiederherstellung ersetzt, damit die "
+"Website an ihrem neuen Ort funktioniert."
+
+#: admin/views/page-restore.php:77
+msgid "What to restore"
+msgstr "Was wiederhergestellt werden soll"
+
+#: admin/views/page-restore.php:86
+msgid "Choose database tables"
+msgstr "Datenbanktabellen auswählen"
+
+#: admin/views/page-restore.php:87 admin/views/settings/tab-database.php:45
+msgid "Select all / none"
+msgstr "Alle / keine auswählen"
+
+#: admin/views/page-restore.php:96
+msgid "Search and replace"
+msgstr "Suchen und Ersetzen"
+
+#: admin/views/page-restore.php:97
+msgid ""
+"Applied to the restored database, including serialised and JSON data. Use it "
+"to move the site to a new domain, a new path, or from http to https."
+msgstr ""
+"Wird auf die wiederhergestellte Datenbank angewendet, einschließlich "
+"serialisierter und JSON-Daten. Verwende dies, um die Website auf eine neue "
+"Domain, einen neuen Pfad oder von http auf https umzuziehen."
+
+#: admin/views/page-restore.php:99
+msgid "Search for"
+msgstr "Suchen nach"
+
+#: admin/views/page-restore.php:99
+msgid "Replace with"
+msgstr "Ersetzen durch"
+
+#: admin/views/page-restore.php:110
+msgid "Add a replacement"
+msgstr "Ersetzung hinzufügen"
+
+#: admin/views/page-restore.php:112
+msgid "Options"
+msgstr "Optionen"
+
+#: admin/views/page-restore.php:116 admin/views/settings/tab-encryption.php:39
+msgid "Passphrase"
+msgstr "Passphrase"
+
+#: admin/views/page-restore.php:119
+msgid ""
+"This backup is encrypted. Leave empty to use the passphrase stored on this "
+"site."
+msgstr ""
+"Dieses Backup ist verschlüsselt. Leer lassen, um die auf dieser Website "
+"gespeicherte Passphrase zu verwenden."
+
+#: admin/views/page-restore.php:125
+msgid "Restore from"
+msgstr "Wiederherstellen von"
+
+#: admin/views/page-restore.php:130
+msgid ""
+"Files already on this server are used directly; the rest is downloaded from "
+"here."
+msgstr ""
+"Dateien, die bereits auf diesem Server liegen, werden direkt verwendet; der "
+"Rest wird von hier heruntergeladen."
+
+#: admin/views/page-restore.php:135
+msgid "Safety"
+msgstr "Sicherheit"
+
+#: admin/views/page-restore.php:137
+msgid "Back up the current state of the selected parts first"
+msgstr "Zuerst den aktuellen Stand der ausgewählten Teile sichern"
+
+#: admin/views/page-restore.php:138
+msgid ""
+"Delete files that were not part of the backup (exact rollback of the "
+"selected parts)"
+msgstr ""
+"Dateien löschen, die nicht Teil des Backups waren (exaktes Zurücksetzen der "
+"ausgewählten Teile)"
+
+#: admin/views/page-restore.php:139
+msgid "Also restore wp-config.php"
+msgstr "Auch wp-config.php wiederherstellen"
+
+#: admin/views/page-restore.php:140
+msgid ""
+"wp-config.php holds this server's database credentials and is left alone "
+"unless ticked. This plugin's own files and settings are never overwritten by "
+"a restore."
+msgstr ""
+"wp-config.php enthält die Datenbank-Zugangsdaten dieses Servers und bleibt "
+"unverändert, solange diese Option nicht angehakt ist. Die eigenen Dateien "
+"und Einstellungen dieses Plugins werden bei einer Wiederherstellung niemals "
+"überschrieben."
+
+#: admin/views/page-restore.php:145
+msgid "Restore now"
+msgstr "Jetzt wiederherstellen"
+
+#: admin/views/page-settings.php:18
+msgid "General"
+msgstr "Allgemein"
+
+#: admin/views/page-settings.php:19
+msgid "Schedule"
+msgstr "Zeitplan"
+
+#: admin/views/page-settings.php:20
+msgid "Storage"
+msgstr "Speicher"
+
+#: admin/views/page-settings.php:21
+msgid "Files"
+msgstr "Dateien"
+
+#: admin/views/page-settings.php:23
+msgid "Encryption"
+msgstr "Verschlüsselung"
+
+#: admin/views/page-settings.php:24
+msgid "Retention"
+msgstr "Aufbewahrung"
+
+#: admin/views/page-settings.php:25
+msgid "Security"
+msgstr "Sicherheit"
+
+#: admin/views/settings/tab-database.php:31
+msgid "Tables"
+msgstr "Tabellen"
+
+#: admin/views/settings/tab-database.php:33
+msgid "All tables of this site (recommended)"
+msgstr "Alle Tabellen dieser Website (empfohlen)"
+
+#: admin/views/settings/tab-database.php:34
+msgid "Only the tables selected below"
+msgstr "Nur die unten ausgewählten Tabellen"
+
+#. translators: %s: table prefix
+#: admin/views/settings/tab-database.php:38
+#, php-format
+msgid ""
+"Tables with the prefix %s. New tables created by plugins later are included "
+"automatically with \"All tables\"."
+msgstr ""
+"Tabellen mit dem Präfix %s. Neue Tabellen, die später von Plugins erstellt "
+"werden, sind bei „Alle Tabellen“ automatisch enthalten."
+
+#: admin/views/settings/tab-encryption.php:20
+msgid "Encryption is not available on this server (libsodium missing)."
+msgstr ""
+"Verschlüsselung ist auf diesem Server nicht verfügbar (libsodium fehlt)."
+
+#: admin/views/settings/tab-encryption.php:24
+msgid ""
+"Write the passphrase down and keep it somewhere safe, away from this site."
+msgstr ""
+"Schreibe die Passphrase auf und bewahre sie an einem sicheren Ort auf, "
+"getrennt von dieser Website."
+
+#: admin/views/settings/tab-encryption.php:25
+msgid ""
+"An encrypted backup cannot be restored without it — not by you, not by your "
+"host, not by anyone. That is the point."
+msgstr ""
+"Ein verschlüsseltes Backup kann ohne sie nicht wiederhergestellt werden – "
+"nicht von dir, nicht von deinem Hoster, von niemandem. Genau darum geht es."
+
+#: admin/views/settings/tab-encryption.php:31
+msgid "Encrypt backups"
+msgstr "Backups verschlüsseln"
+
+#: admin/views/settings/tab-encryption.php:33
+msgid "Encrypt the database in every new backup"
+msgstr "Die Datenbank in jedem neuen Backup verschlüsseln"
+
+#: admin/views/settings/tab-encryption.php:34
+msgid "Also encrypt the file archives"
+msgstr "Auch die Dateiarchive verschlüsseln"
+
+#: admin/views/settings/tab-encryption.php:35
+msgid ""
+"XChaCha20-Poly1305 with a key derived from your passphrase (PBKDF2-SHA256, "
+"600 000 rounds). Tampering is detected. Existing backups are not changed."
+msgstr ""
+"XChaCha20-Poly1305 mit einem aus deiner Passphrase abgeleiteten Schlüssel "
+"(PBKDF2-SHA256, 600 000 Runden). Manipulationen werden erkannt. Bestehende "
+"Backups werden nicht verändert."
+
+#: admin/views/settings/tab-encryption.php:41
+#: admin/views/settings/tab-storage.php:267
+#: admin/views/settings/tab-storage.php:269
+msgid "Stored — leave empty to keep"
+msgstr "Gespeichert – leer lassen, um sie beizubehalten"
+
+#: admin/views/settings/tab-encryption.php:42
+msgid "Repeat passphrase"
+msgstr "Passphrase wiederholen"
+
+#: admin/views/settings/tab-encryption.php:43
+msgid ""
+"At least 12 characters. It is stored sealed with this site's secret keys so "
+"scheduled backups can run; a copy of the database alone does not reveal it. "
+"Changing it affects new backups only — older ones keep their passphrase."
+msgstr ""
+"Mindestens 12 Zeichen. Sie wird mit den geheimen Schlüsseln dieser Website "
+"versiegelt gespeichert, damit geplante Backups laufen können; eine Kopie der "
+"Datenbank allein gibt sie nicht preis. Eine Änderung wirkt sich nur auf neue "
+"Backups aus – ältere behalten ihre Passphrase."
+
+#: admin/views/settings/tab-encryption.php:47
+msgid "Reminder"
+msgstr "Erinnerung"
+
+#: admin/views/settings/tab-encryption.php:49
+msgid ""
+"Where you keep the passphrase, e.g. \"company password manager\". Never the "
+"passphrase itself."
+msgstr ""
+"Wo du die Passphrase aufbewahrst, z. B. „Passwortmanager der Firma“. Niemals "
+"die Passphrase selbst."
+
+#: admin/views/settings/tab-files.php:25
+msgid ""
+"Untick a folder to leave it out of file backups; tick it to include it. A "
+"rule applies to everything inside the folder, and the most specific rule "
+"wins: you can exclude \"uploads\" and still include one folder inside it, or "
+"include a folder that is skipped by default. Which parts are backed up at "
+"all (core, plugins, themes, uploads, other files) is chosen per backup and "
+"on the Schedule tab."
+msgstr ""
+"Entferne das Häkchen bei einem Ordner, um ihn von Datei-Backups "
+"auszuschließen; setze es, um ihn einzuschließen. Eine Regel gilt für alles "
+"im Ordner, und die spezifischste Regel gewinnt: Du kannst „uploads“ "
+"ausschließen und trotzdem einen Ordner darin einschließen oder einen "
+"standardmäßig übersprungenen Ordner einschließen. Welche Bereiche überhaupt "
+"gesichert werden (Core, Plugins, Themes, Uploads, andere Dateien), wählst du "
+"pro Backup und im Tab „Zeitplan“."
+
+#: admin/views/settings/tab-files.php:31
+msgid "your own setting for this folder"
+msgstr "deine eigene Einstellung für diesen Ordner"
+
+#: admin/views/settings/tab-files.php:32
+msgid "skipped by default (cache, other backups)"
+msgstr "standardmäßig übersprungen (Cache, andere Backups)"
+
+#: admin/views/settings/tab-files.php:37
+msgid "Loading folders…"
+msgstr "Ordner werden geladen …"
+
+#: admin/views/settings/tab-files.php:41
+msgid "Your folder rules"
+msgstr "Deine Ordnerregeln"
+
+#: admin/views/settings/tab-files.php:44
+msgid "Advanced"
+msgstr "Erweitert"
+
+#: admin/views/settings/tab-files.php:47
+msgid "Exclude by pattern"
+msgstr "Nach Muster ausschließen"
+
+#: admin/views/settings/tab-files.php:50
+msgid ""
+"One pattern per line, for files or folders anywhere. Examples: *.log  ·  "
+"*.tmp  ·  content/uploads/*/cache/*. Paths start with root/ (the WordPress "
+"directory) or content/ (wp-content). Folder rules from the tree take "
+"precedence; file-name patterns such as *.log apply everywhere."
+msgstr ""
+"Ein Muster pro Zeile, für Dateien oder Ordner überall. Beispiele: *.log  ·  "
+"*.tmp  ·  content/uploads/*/cache/*. Pfade beginnen mit root/ (das WordPress-"
+"Verzeichnis) oder content/ (wp-content). Ordnerregeln aus dem Baum haben "
+"Vorrang; Dateinamen-Muster wie *.log gelten überall."
+
+#: admin/views/settings/tab-files.php:54
+msgid "Skip files larger than"
+msgstr "Dateien überspringen, die größer sind als"
+
+#: admin/views/settings/tab-files.php:55
+msgid "0 = no limit"
+msgstr "0 = keine Begrenzung"
+
+#: admin/views/settings/tab-general.php:25
+msgid "In use:"
+msgstr "In Verwendung:"
+
+#: admin/views/settings/tab-general.php:26
+msgid ""
+"Leave empty for the automatic choice: outside the web root when the server "
+"allows it, otherwise a protected, randomly named folder. A directory outside "
+"the web root is the safest place."
+msgstr ""
+"Leer lassen für die automatische Auswahl: außerhalb des Web-Roots, wenn der "
+"Server dies zulässt, sonst ein geschützter Ordner mit zufälligem Namen. Ein "
+"Verzeichnis außerhalb des Web-Roots ist der sicherste Ort."
+
+#: admin/views/settings/tab-general.php:31
+msgid "Archive part size"
+msgstr "Größe der Archivteile"
+
+#: admin/views/settings/tab-general.php:33
+msgid ""
+"Large backups are split into parts of this size, which upload and download "
+"more reliably."
+msgstr ""
+"Große Backups werden in Teile dieser Größe aufgeteilt, die sich "
+"zuverlässiger hoch- und herunterladen lassen."
+
+#: admin/views/settings/tab-general.php:36
+msgid "Copy on this server"
+msgstr "Kopie auf diesem Server"
+
+#: admin/views/settings/tab-general.php:37
+msgid "Keep a copy of every backup on this server"
+msgstr "Von jedem Backup eine Kopie auf diesem Server behalten"
+
+#: admin/views/settings/tab-general.php:38
+msgid ""
+"When off, the local copy is deleted once at least one remote destination has "
+"received the backup."
+msgstr ""
+"Wenn deaktiviert, wird die lokale Kopie gelöscht, sobald mindestens ein "
+"externes Speicherziel das Backup erhalten hat."
+
+#: admin/views/settings/tab-general.php:41
+msgid "Work per request"
+msgstr "Arbeitszeit pro Anfrage"
+
+#: admin/views/settings/tab-general.php:42
+msgid "seconds"
+msgstr "Sekunden"
+
+#: admin/views/settings/tab-general.php:43
+msgid ""
+"Backups run in short steps so they never hit the server's time limit. Raise "
+"this on a dedicated server, lower it if backups stall."
+msgstr ""
+"Backups laufen in kurzen Schritten, damit sie nie das Zeitlimit des Servers "
+"erreichen. Erhöhe den Wert auf einem dedizierten Server und verringere ihn, "
+"wenn Backups hängen bleiben."
+
+#: admin/views/settings/tab-general.php:46
+msgid "E-mail reports"
+msgstr "E-Mail-Berichte"
+
+#: admin/views/settings/tab-general.php:49
+msgid "Only when something went wrong"
+msgstr "Nur wenn etwas schiefgelaufen ist"
+
+#: admin/views/settings/tab-general.php:50
+msgid "After every backup and restore"
+msgstr "Nach jedem Backup und jeder Wiederherstellung"
+
+#: admin/views/settings/tab-general.php:51
+msgid "Never"
+msgstr "Nie"
+
+#: admin/views/settings/tab-general.php:54
+msgid "Recipients, separated by commas. Empty: the site administrator address."
+msgstr ""
+"Empfänger, durch Kommas getrennt. Leer: die E-Mail-Adresse des Website-"
+"Administrators."
+
+#: admin/views/settings/tab-general.php:58
+msgid "Uninstall"
+msgstr "Deinstallieren"
+
+#: admin/views/settings/tab-general.php:60
+msgid "Delete settings and reports when the plugin is deleted"
+msgstr "Einstellungen und Berichte löschen, wenn das Plugin gelöscht wird"
+
+#: admin/views/settings/tab-general.php:61
+msgid "Also delete the backups stored on this server"
+msgstr "Auch die auf diesem Server gespeicherten Backups löschen"
+
+#: admin/views/settings/tab-general.php:69
+msgid "Send a test e-mail"
+msgstr "Eine Test-E-Mail senden"
+
+#: admin/views/settings/tab-retention.php:36
+msgid ""
+"Old backups are removed automatically after each backup. A full backup is "
+"only ever removed together with the incremental backups built on it, and the "
+"newest backup of each kind is always kept."
+msgstr ""
+"Alte Backups werden nach jedem Backup automatisch entfernt. Ein "
+"vollständiges Backup wird immer nur zusammen mit den darauf aufbauenden "
+"inkrementellen Backups entfernt, und das neueste Backup jeder Art wird immer "
+"behalten."
+
+#: admin/views/settings/tab-retention.php:37
+msgid ""
+"Backups marked \"Keep\" on the Backups screen are exempt from every rule on "
+"this page and do not count towards the limits. Marking an incremental backup "
+"also keeps the full backup and the incrementals it builds on."
+msgstr ""
+"Backups, die im Bildschirm „Backups“ als „Behalten“ markiert sind, sind von "
+"allen Regeln auf dieser Seite ausgenommen und zählen nicht zu den Limits. "
+"Wird ein inkrementelles Backup markiert, bleiben auch das vollständige "
+"Backup und die inkrementellen Backups erhalten, auf denen es aufbaut."
+
+#: admin/views/settings/tab-retention.php:39
+msgid "How many to keep"
+msgstr "Wie viele aufbewahrt werden"
+
+#: admin/views/settings/tab-retention.php:42
+#: admin/views/settings/tab-schedule.php:76
+msgid "File backups"
+msgstr "Datei-Backups"
+
+#: admin/views/settings/tab-retention.php:43
+msgid "full backups, each with its incremental backups"
+msgstr "vollständige Backups, jeweils mit ihren inkrementellen Backups"
+
+#: admin/views/settings/tab-retention.php:46
+#: admin/views/settings/tab-schedule.php:92
+msgid "Database backups"
+msgstr "Datenbank-Backups"
+
+#: admin/views/settings/tab-retention.php:50
+msgid "Partial backups"
+msgstr "Teil-Backups"
+
+#: admin/views/settings/tab-retention.php:51
+msgid "manual selections and backups before updates"
+msgstr "manuelle Auswahlen und Backups vor Updates"
+
+#: admin/views/settings/tab-retention.php:54
+msgid "Rotation (GFS)"
+msgstr "Rotation (GFS)"
+
+#: admin/views/settings/tab-retention.php:56
+msgid ""
+"Instead of a fixed number of file backups, keep one per day, week and month:"
+msgstr ""
+"Statt einer festen Anzahl von Datei-Backups jeweils eines pro Tag, Woche und "
+"Monat aufbewahren:"
+
+#: admin/views/settings/tab-retention.php:58
+msgid "daily"
+msgstr "täglich"
+
+#: admin/views/settings/tab-retention.php:59
+msgid "weekly"
+msgstr "wöchentlich"
+
+#: admin/views/settings/tab-retention.php:60
+msgid "monthly"
+msgstr "monatlich"
+
+#: admin/views/settings/tab-retention.php:66
+msgid "How long to keep them, per location"
+msgstr "Wie lange sie aufbewahrt werden, je Speicherort"
+
+#: admin/views/settings/tab-retention.php:69
+msgid "On this server"
+msgstr "Auf diesem Server"
+
+#: admin/views/settings/tab-retention.php:70
+#: admin/views/settings/tab-retention.php:75
+#: admin/views/settings/tab-storage.php:287
+msgid "days"
+msgstr "Tage"
+
+#: admin/views/settings/tab-retention.php:71
+msgid ""
+"Backups older than this are removed from this server. Copies on remote "
+"destinations are not affected."
+msgstr ""
+"Ältere Backups werden von diesem Server entfernt. Kopien auf externen "
+"Speicherzielen sind davon nicht betroffen."
+
+#: admin/views/settings/tab-retention.php:74
+msgid "On remote / cloud destinations"
+msgstr "Auf externen / Cloud-Speicherzielen"
+
+#: admin/views/settings/tab-retention.php:76
+msgid ""
+"Default for every remote destination. Each destination can override it on "
+"the Storage tab."
+msgstr ""
+"Standardwert für jedes externe Speicherziel. Jedes Speicherziel kann ihn im "
+"Tab „Speicher“ überschreiben."
+
+#: admin/views/settings/tab-retention.php:79
+msgid "Everywhere"
+msgstr "Überall"
+
+#: admin/views/settings/tab-retention.php:80
+msgid "days maximum age"
+msgstr "Tage maximales Alter"
+
+#: admin/views/settings/tab-retention.php:83
+msgid "Fewer copies on this server"
+msgstr "Weniger Kopien auf diesem Server"
+
+#: admin/views/settings/tab-retention.php:85
+msgid "file backups"
+msgstr "Datei-Backups"
+
+#: admin/views/settings/tab-retention.php:86
+msgid "database backups"
+msgstr "Datenbank-Backups"
+
+#: admin/views/settings/tab-retention.php:87
+msgid ""
+"Keep only the newest ones locally to save disk space; older copies stay on "
+"the remote destinations. Applies only to backups that also exist remotely."
+msgstr ""
+"Nur die neuesten lokal behalten, um Speicherplatz zu sparen; ältere Kopien "
+"bleiben auf den externen Speicherzielen. Gilt nur für Backups, die auch "
+"extern vorhanden sind."
+
+#: admin/views/settings/tab-retention.php:91
+msgid "0 means no limit."
+msgstr "0 bedeutet keine Begrenzung."
+
+#: admin/views/settings/tab-retention.php:93
+msgid "Apply the rules right away"
+msgstr "Die Regeln sofort anwenden"
+
+#: admin/views/settings/tab-schedule.php:21
+#: includes/schedule/class-scheduler.php:182
+msgid "Off"
+msgstr "Aus"
+
+#: admin/views/settings/tab-schedule.php:22
+msgid "Every few hours"
+msgstr "Alle paar Stunden"
+
+#: admin/views/settings/tab-schedule.php:23
+msgid "Daily"
+msgstr "Täglich"
+
+#: admin/views/settings/tab-schedule.php:24
+msgid "Weekly"
+msgstr "Wöchentlich"
+
+#: admin/views/settings/tab-schedule.php:25
+msgid "Monthly"
+msgstr "Monatlich"
+
+#: admin/views/settings/tab-schedule.php:43
+msgid "every"
+msgstr "alle"
+
+#: admin/views/settings/tab-schedule.php:45
+msgid "hours"
+msgstr "Stunden"
+
+#: admin/views/settings/tab-schedule.php:48
+msgid "on"
+msgstr "am"
+
+#: admin/views/settings/tab-schedule.php:56
+msgid "on day"
+msgstr "am Tag"
+
+#: admin/views/settings/tab-schedule.php:60
+msgid "at"
+msgstr "um"
+
+#. translators: %s: timezone name
+#: admin/views/settings/tab-schedule.php:71
+#, php-format
+msgid ""
+"Times are in the site's timezone (%s). WordPress runs scheduled tasks when "
+"the site receives visits; on a very quiet site, set up a real cron job for "
+"wp-cron.php for exact timing."
+msgstr ""
+"Die Zeiten beziehen sich auf die Zeitzone der Website (%s). WordPress führt "
+"geplante Aufgaben aus, wenn die Website besucht wird; richte auf einer sehr "
+"wenig besuchten Website für exakte Zeiten einen echten Cronjob für wp-"
+"cron.php ein."
+
+#: admin/views/settings/tab-schedule.php:80
+msgid "A full backup every"
+msgstr "Ein vollständiges Backup alle"
+
+#: admin/views/settings/tab-schedule.php:82
+msgid "runs; incremental in between (only changed files)."
+msgstr "Durchläufe; dazwischen inkrementell (nur geänderte Dateien)."
+
+#: admin/views/settings/tab-schedule.php:95
+msgid "Which tables are included is set on the Database tab."
+msgstr "Welche Tabellen enthalten sind, wird im Tab „Datenbank“ festgelegt."
+
+#: admin/views/settings/tab-schedule.php:99
+msgid "Before updates"
+msgstr "Vor Updates"
+
+#: admin/views/settings/tab-schedule.php:101
+msgid "Back up automatically before WordPress, a plugin or a theme is updated"
+msgstr ""
+"Automatisch ein Backup erstellen, bevor WordPress, ein Plugin oder ein Theme "
+"aktualisiert wird"
+
+#: admin/views/settings/tab-schedule.php:102
+msgid "Include the database"
+msgstr "Die Datenbank einschließen"
+
+#: admin/views/settings/tab-schedule.php:103
+msgid ""
+"Applies to manual, bulk and automatic background updates. Only what is about "
+"to change is archived, so the update is delayed as little as possible."
+msgstr ""
+"Gilt für manuelle, Massen- und automatische Hintergrund-Updates. Nur was "
+"sich gleich ändert, wird archiviert, sodass das Update so wenig wie möglich "
+"verzögert wird."
+
+#: admin/views/settings/tab-security.php:21
+msgid "Outside the web root — backups cannot be requested by URL at all."
+msgstr ""
+"Außerhalb des Web-Roots – Backups können überhaupt nicht per URL abgerufen "
+"werden."
+
+#: admin/views/settings/tab-security.php:22
+msgid "Inside the web root, but the web server refuses to serve it."
+msgstr ""
+"Innerhalb des Web-Roots, aber der Webserver verweigert die Auslieferung."
+
+#: admin/views/settings/tab-security.php:23
+msgid ""
+"EXPOSED: the web server hands out files from the backup directory. Act now."
+msgstr ""
+"ÖFFENTLICH ZUGÄNGLICH: Der Webserver liefert Dateien aus dem Backup-"
+"Verzeichnis aus. Handle jetzt."
+
+#: admin/views/settings/tab-security.php:24
+msgid "Not verified: the test request could not be made."
+msgstr "Nicht überprüft: Die Testanfrage konnte nicht durchgeführt werden."
+
+#: admin/views/settings/tab-security.php:31
+msgid "Location"
+msgstr "Speicherort"
+
+#: admin/views/settings/tab-security.php:32
+msgid "Reachable from the internet?"
+msgstr "Aus dem Internet erreichbar?"
+
+#. translators: %s: date and time
+#: admin/views/settings/tab-security.php:34
+#, php-format
+msgid "Tested %s. Re-tested daily."
+msgstr "Getestet: %s. Wird täglich erneut getestet."
+
+#: admin/views/settings/tab-security.php:37
+msgid "Protection"
+msgstr "Schutz"
+
+#: admin/views/settings/tab-security.php:37
+msgid ""
+"Random, unguessable directory and file names; deny-all rules for Apache, "
+"LiteSpeed and IIS; no directory listing; downloads only through this screen "
+"while signed in."
+msgstr ""
+"Zufällige, nicht erratbare Verzeichnis- und Dateinamen; Deny-all-Regeln für "
+"Apache, LiteSpeed und IIS; keine Verzeichnisauflistung; Downloads nur über "
+"diese Ansicht, während du angemeldet bist."
+
+#: admin/views/settings/tab-security.php:43
+msgid "How to fix it"
+msgstr "So behebst du das"
+
+#: admin/views/settings/tab-security.php:45
+msgid ""
+"Best: choose a backup directory outside the web root under Settings → "
+"General (ask your host which path is not served)."
+msgstr ""
+"Am besten: Wähle unter Einstellungen → Allgemein ein Backup-Verzeichnis "
+"außerhalb des Web-Roots (frage deinen Hoster, welcher Pfad nicht vom "
+"Webserver ausgeliefert wird)."
+
+#: admin/views/settings/tab-security.php:46
+msgid ""
+"On nginx, which ignores .htaccess files, add this block to the server "
+"configuration and reload nginx:"
+msgstr ""
+"Unter nginx, das .htaccess-Dateien ignoriert, füge diesen Block zur "
+"Serverkonfiguration hinzu und lade nginx neu:"
+
+#: admin/views/settings/tab-security.php:53
+msgid "Test again"
+msgstr "Erneut testen"
+
+#: admin/views/settings/tab-security.php:56
+msgid "Plugin password"
+msgstr "Plugin-Passwort"
+
+#: admin/views/settings/tab-security.php:57
+msgid ""
+"An extra password for every Backup Manager screen, on top of administrator "
+"rights. Useful when several people administer the site: backups contain "
+"everything, including every user's data."
+msgstr ""
+"Ein zusätzliches Passwort für jede Ansicht von Backup Manager, zusätzlich zu "
+"den Administratorrechten. Nützlich, wenn mehrere Personen die Website "
+"verwalten: Backups enthalten alles, einschließlich der Daten aller Benutzer."
+
+#: admin/views/settings/tab-security.php:62
+#: admin/views/settings/tab-storage.php:95
+#: includes/report/class-email-report.php:69
+msgid "Status"
+msgstr "Status"
+
+#: admin/views/settings/tab-security.php:63
+msgid "Password set"
+msgstr "Passwort festgelegt"
+
+#: admin/views/settings/tab-security.php:63
+msgid "No password"
+msgstr "Kein Passwort"
+
+#: admin/views/settings/tab-security.php:67
+msgid "Current password"
+msgstr "Aktuelles Passwort"
+
+#: admin/views/settings/tab-security.php:72
+msgid "New password"
+msgstr "Neues Passwort"
+
+#: admin/views/settings/tab-security.php:72
+#: includes/access/class-password-gate.php:178
+#: includes/storage/class-destinations.php:89
+msgid "Password"
+msgstr "Passwort"
+
+#: admin/views/settings/tab-security.php:75
+msgid "Repeat password"
+msgstr "Passwort wiederholen"
+
+#: admin/views/settings/tab-security.php:76
+msgid "At least 10 characters."
+msgstr "Mindestens 10 Zeichen."
+
+#: admin/views/settings/tab-security.php:80
+msgid "Stay unlocked for"
+msgstr "Entsperrt bleiben für"
+
+#: admin/views/settings/tab-security.php:81
+msgid "minutes"
+msgstr "Minuten"
+
+#: admin/views/settings/tab-security.php:86
+msgid "Remove the password"
+msgstr "Passwort entfernen"
+
+#: admin/views/settings/tab-security.php:90
+msgid ""
+"Forgot it? Add <code>define( 'AFBM_DISABLE_PASSWORD', true );</code> to wp-"
+"config.php, set a new password here, then remove the line again."
+msgstr ""
+"Vergessen? Füge <code>define( 'AFBM_DISABLE_PASSWORD', true );</code> zur wp-"
+"config.php hinzu, lege hier ein neues Passwort fest und entferne die Zeile "
+"dann wieder."
+
+#: admin/views/settings/tab-storage.php:47
+msgid "Not connected"
+msgstr "Nicht verbunden"
+
+#: admin/views/settings/tab-storage.php:50
+#: admin/views/settings/tab-storage.php:104
+#: admin/views/settings/tab-storage.php:240
+msgid "Active"
+msgstr "Aktiv"
+
+#: admin/views/settings/tab-storage.php:51
+msgid "Paused"
+msgstr "Pausiert"
+
+#. translators: %s: destination name
+#: admin/views/settings/tab-storage.php:63
+#, php-format
+msgid "Connect \"%s\" to Dropbox"
+msgstr "„%s“ mit Dropbox verbinden"
+
+#: admin/views/settings/tab-storage.php:68
+msgid "Open Dropbox"
+msgstr "Dropbox öffnen"
+
+#: admin/views/settings/tab-storage.php:69
+msgid ""
+"Sign in if asked and press \"Allow\". Afrit Backup Manager only gets access "
+"to its own folder (Apps/Afrit Backup Manager), nothing else in your Dropbox."
+msgstr ""
+"Melde dich an, falls nötig, und klicke auf „Zulassen“. Afrit Backup Manager "
+"erhält nur Zugriff auf seinen eigenen Ordner (Apps/Afrit Backup Manager), "
+"auf nichts anderes in deiner Dropbox."
+
+#: admin/views/settings/tab-storage.php:71
+msgid "Dropbox then shows an access code. Copy it and paste it here:"
+msgstr ""
+"Dropbox zeigt dann einen Zugangscode an. Kopiere ihn und füge ihn hier ein:"
+
+#: admin/views/settings/tab-storage.php:76
+msgid "Access code from Dropbox"
+msgstr "Zugangscode von Dropbox"
+
+#: admin/views/settings/tab-storage.php:78
+msgid "Finish connecting"
+msgstr "Verbindung abschließen"
+
+#: admin/views/settings/tab-storage.php:80
+msgid ""
+"The code works once and expires after a few minutes. The connection is "
+"stored only on this site; it can be removed at any time under Dropbox → "
+"Settings → Apps → Connected apps."
+msgstr ""
+"Der Code funktioniert einmal und läuft nach wenigen Minuten ab. Die "
+"Verbindung wird nur auf dieser Website gespeichert und kann jederzeit unter "
+"Dropbox → Einstellungen → Apps → Verknüpfte Apps entfernt werden."
+
+#: admin/views/settings/tab-storage.php:88
+msgid ""
+"Every backup is written to this server first and then copied to all active "
+"destinations at the same time. If one destination is unavailable, the others "
+"still receive their copy."
+msgstr ""
+"Jedes Backup wird zuerst auf diesen Server geschrieben und dann gleichzeitig "
+"auf alle aktiven Speicherziele kopiert. Ist ein Speicherziel nicht "
+"verfügbar, erhalten die anderen trotzdem ihre Kopie."
+
+#: admin/views/settings/tab-storage.php:93
+msgid "Destination"
+msgstr "Speicherziel"
+
+#: admin/views/settings/tab-storage.php:96
+msgid "Keep for"
+msgstr "Aufbewahren für"
+
+#: admin/views/settings/tab-storage.php:102
+#: includes/storage/class-destinations.php:158
+msgid "This server"
+msgstr "Dieser Server"
+
+#: admin/views/settings/tab-storage.php:103
+msgid "Local"
+msgstr "Lokal"
+
+#. translators: %d: days
+#: admin/views/settings/tab-storage.php:106
+#: admin/views/settings/tab-storage.php:120
+#, php-format
+msgid "%d day"
+msgid_plural "%d days"
+msgstr[0] "%d Tag"
+msgstr[1] "%d Tage"
+
+#. translators: %d: days
+#: admin/views/settings/tab-storage.php:106
+#: admin/views/settings/tab-storage.php:120
+msgid "Retention rules"
+msgstr "Aufbewahrungsregeln"
+
+#: admin/views/settings/tab-storage.php:124
+msgid "Edit"
+msgstr "Bearbeiten"
+
+#: admin/views/settings/tab-storage.php:128
+msgid "Reconnect"
+msgstr "Erneut verbinden"
+
+#: admin/views/settings/tab-storage.php:128
+msgid "Connect"
+msgstr "Verbinden"
+
+#: admin/views/settings/tab-storage.php:133
+msgid "Test"
+msgstr "Testen"
+
+#: admin/views/settings/tab-storage.php:146
+msgid "Add a destination:"
+msgstr "Ein Speicherziel hinzufügen:"
+
+#. translators: %s: destination type
+#: admin/views/settings/tab-storage.php:164
+#, php-format
+msgid "New %s destination"
+msgstr "Neues %s-Speicherziel"
+
+#. translators: %s: destination name
+#: admin/views/settings/tab-storage.php:166
+#, php-format
+msgid "Edit \"%s\""
+msgstr "„%s“ bearbeiten"
+
+#: admin/views/settings/tab-storage.php:174
+msgid "Connect in three steps"
+msgstr "In drei Schritten verbinden"
+
+#: admin/views/settings/tab-storage.php:176
+msgid "Save this destination."
+msgstr "Speichere dieses Speicherziel."
+
+#: admin/views/settings/tab-storage.php:177
+msgid "Press \"Connect\" in the list above and allow access in Dropbox."
+msgstr ""
+"Klicke in der Liste oben auf „Verbinden“ und erlaube den Zugriff in Dropbox."
+
+#: admin/views/settings/tab-storage.php:178
+msgid "Paste the code Dropbox shows. Done."
+msgstr "Füge den Code ein, den Dropbox anzeigt. Fertig."
+
+#: admin/views/settings/tab-storage.php:180
+msgid ""
+"No Dropbox app of your own is needed: Afrit Backup Manager appears under "
+"\"Connected apps\" in your Dropbox and can only access its own folder Apps/"
+"Afrit Backup Manager."
+msgstr ""
+"Eine eigene Dropbox-App ist nicht nötig: Afrit Backup Manager erscheint in "
+"deiner Dropbox unter „Verknüpfte Apps“ und kann nur auf seinen eigenen "
+"Ordner Apps/Afrit Backup Manager zugreifen."
+
+#: admin/views/settings/tab-storage.php:183
+msgid ""
+"This copy of the plugin has no built-in Dropbox app, so connect it with your "
+"own app as described below."
+msgstr ""
+"Diese Version des Plugins enthält keine eingebaute Dropbox-App. Verbinde "
+"Dropbox deshalb wie unten beschrieben mit deiner eigenen App."
+
+#: admin/views/settings/tab-storage.php:186
+msgid "Create your Dropbox app (once, about 3 minutes)"
+msgstr "Erstelle deine Dropbox-App (einmalig, ca. 3 Minuten)"
+
+#: admin/views/settings/tab-storage.php:189
+msgid ""
+"Open <a href=\"https://www.dropbox.com/developers/apps/create\" "
+"target=\"_blank\" rel=\"noopener noreferrer\">dropbox.com/developers/apps/"
+"create</a> and sign in."
+msgstr ""
+"Öffne <a href=\"https://www.dropbox.com/developers/apps/create\" "
+"target=\"_blank\" rel=\"noopener noreferrer\">dropbox.com/developers/apps/"
+"create</a> und melde dich an."
+
+#: admin/views/settings/tab-storage.php:198
+msgid ""
+"Choose \"Scoped access\" and \"App folder\", give the app a name, and create "
+"it."
+msgstr ""
+"Wähle „Scoped access“ und „App folder“, gib der App einen Namen und erstelle "
+"sie."
+
+#: admin/views/settings/tab-storage.php:199
+msgid ""
+"On the Permissions tab, tick files.metadata.read, files.metadata.write, "
+"files.content.read and files.content.write, then \"Submit\"."
+msgstr ""
+"Hake im Tab „Permissions“ files.metadata.read, files.metadata.write, "
+"files.content.read und files.content.write an und klicke dann auf „Submit“."
+
+#: admin/views/settings/tab-storage.php:200
+msgid "On the Settings tab, add this Redirect URI:"
+msgstr "Füge im Tab „Settings“ diese Redirect-URI hinzu:"
+
+#: admin/views/settings/tab-storage.php:201
+msgid ""
+"Copy the App key (and App secret) into the fields below, save, then press "
+"\"Connect\"."
+msgstr ""
+"Kopiere den App-Key (und das App-Secret) in die Felder unten, speichere und "
+"klicke dann auf „Verbinden“."
+
+#: admin/views/settings/tab-storage.php:203
+msgid "Dropbox accepts plain http only for localhost; a live site needs https."
+msgstr ""
+"Dropbox akzeptiert unverschlüsseltes http nur für localhost; eine Live-"
+"Website benötigt https."
+
+#: admin/views/settings/tab-storage.php:207
+msgid "Register your Microsoft app (once, about 5 minutes)"
+msgstr "Registriere deine Microsoft-App (einmalig, ca. 5 Minuten)"
+
+#: admin/views/settings/tab-storage.php:210
+msgid ""
+"Open <a href=\"https://entra.microsoft.com/#view/"
+"Microsoft_AAD_RegisteredApps/ApplicationsListBlade\" target=\"_blank\" "
+"rel=\"noopener noreferrer\">Microsoft Entra → App registrations</a> and "
+"choose \"New registration\"."
+msgstr ""
+"Öffne <a href=\"https://entra.microsoft.com/#view/"
+"Microsoft_AAD_RegisteredApps/ApplicationsListBlade\" target=\"_blank\" "
+"rel=\"noopener noreferrer\">Microsoft Entra → App-Registrierungen</a> und "
+"wähle „Neue Registrierung“."
+
+#: admin/views/settings/tab-storage.php:219
+msgid ""
+"Supported account types: \"Accounts in any organizational directory and "
+"personal Microsoft accounts\"."
+msgstr ""
+"Unterstützte Kontotypen: „Konten in einem beliebigen "
+"Organisationsverzeichnis und persönliche Microsoft-Konten“."
+
+#: admin/views/settings/tab-storage.php:220
+msgid "Redirect URI: platform \"Web\", value:"
+msgstr "Redirect-URI (Umleitungs-URI): Plattform „Web“, Wert:"
+
+#: admin/views/settings/tab-storage.php:221
+msgid ""
+"Under \"Certificates & secrets\", create a client secret and copy its value."
+msgstr ""
+"Erstelle unter „Zertifikate & Geheimnisse“ einen geheimen Clientschlüssel "
+"und kopiere dessen Wert."
+
+#: admin/views/settings/tab-storage.php:222
+msgid ""
+"Under \"API permissions\", add Microsoft Graph → Delegated → "
+"Files.ReadWrite.AppFolder and offline_access."
+msgstr ""
+"Füge unter „API-Berechtigungen“ Microsoft Graph → Delegierte Berechtigungen "
+"→ Files.ReadWrite.AppFolder und offline_access hinzu."
+
+#: admin/views/settings/tab-storage.php:223
+msgid ""
+"Copy the Application (client) ID and the secret into the fields below, save, "
+"then press \"Connect\"."
+msgstr ""
+"Kopiere die Anwendungs-ID (Client) und den geheimen Clientschlüssel in die "
+"Felder unten, speichere und klicke dann auf „Verbinden“."
+
+#: admin/views/settings/tab-storage.php:225
+msgid ""
+"Tenant: \"common\" for most cases, \"consumers\" for personal accounts only, "
+"or your organisation's tenant ID."
+msgstr ""
+"Mandant: „common“ für die meisten Fälle, „consumers“ nur für persönliche "
+"Konten oder die Mandanten-ID deiner Organisation."
+
+#: admin/views/settings/tab-storage.php:228
+msgid ""
+"Without FTPS, the password and the backups travel unencrypted. Use FTPS or "
+"SFTP whenever the server supports it, and turn on backup encryption."
+msgstr "Ohne FTPS werden Passwort und Backups unverschlüsselt übertragen. Verwende FTPS oder SFTP, wann immer der Server es unterstützt, und aktiviere die Backup-Verschlüsselung."
+
+#: admin/views/settings/tab-storage.php:236
+msgid "Name"
+msgstr "Name"
+
+#: admin/views/settings/tab-storage.php:241
+msgid "Copy new backups to this destination"
+msgstr "Neue Backups auf dieses Speicherziel kopieren"
+
+#: admin/views/settings/tab-storage.php:264
+msgid "Advanced: use my own Dropbox app instead of the built-in one"
+msgstr "Erweitert: meine eigene Dropbox-App statt der eingebauten verwenden"
+
+#: admin/views/settings/tab-storage.php:275
+msgid ""
+"Folder inside the app folder. One folder per site keeps backups of several "
+"sites apart."
+msgstr ""
+"Ordner innerhalb des App-Ordners. Ein eigener Ordner pro Website hält die "
+"Backups mehrerer Websites getrennt."
+
+#: admin/views/settings/tab-storage.php:275
+msgid ""
+"Created if it does not exist. Relative paths start in the login directory."
+msgstr ""
+"Wird erstellt, falls er nicht existiert. Relative Pfade beginnen im "
+"Anmeldeverzeichnis."
+
+#: admin/views/settings/tab-storage.php:277
+msgid ""
+"Leave empty: the certificate must be valid for the host name. Only for your "
+"own server with a self-signed certificate: press \"Test\", compare the key "
+"shown with the one on your server, and enter it here (sha256//…)."
+msgstr "Leer lassen: Das Zertifikat muss für den Hostnamen gültig sein. Nur für deinen eigenen Server mit selbstsigniertem Zertifikat: Klicke auf „Testen“, vergleiche den angezeigten Schlüssel mit dem auf deinem Server und trage ihn hier ein (sha256//…)."
+
+#: admin/views/settings/tab-storage.php:279
+msgid ""
+"Filled in automatically on the first successful test, then checked on every "
+"connection. Clear it only if the server's key changed on purpose."
+msgstr ""
+"Wird beim ersten erfolgreichen Test automatisch ausgefüllt und dann bei "
+"jeder Verbindung geprüft. Leere das Feld nur, wenn sich der Schlüssel des "
+"Servers absichtlich geändert hat."
+
+#: admin/views/settings/tab-storage.php:285
+msgid "Keep backups here for"
+msgstr "Backups hier aufbewahren für"
+
+#: admin/views/settings/tab-storage.php:288
+msgid "0 = use the remote setting on the Retention tab."
+msgstr ""
+"0 = die Einstellung für externe Speicherziele im Tab „Aufbewahrung“ "
+"verwenden."
+
+#: admin/views/settings/tab-storage.php:292
+msgid "Save destination"
+msgstr "Speicherziel speichern"
+
+#: includes/access/class-password-gate.php:171
+msgid "Backup Manager is locked"
+msgstr "Backup Manager ist gesperrt"
+
+#: includes/access/class-password-gate.php:174
+msgid ""
+"Backups contain a complete copy of this site. Enter the Backup Manager "
+"password to continue."
+msgstr ""
+"Backups enthalten eine vollständige Kopie dieser Website. Gib das Backup-"
+"Manager-Passwort ein, um fortzufahren."
+
+#: includes/access/class-password-gate.php:180
+msgid "Unlock"
+msgstr "Entsperren"
+
+#. translators: %s: number of files
+#: includes/backup/class-backup-job.php:225
+#, php-format
+msgid "Scanning files: %s found"
+msgstr "Dateien werden gescannt: %s gefunden"
+
+#. translators: 1: files archived, 2: total files
+#: includes/backup/class-backup-job.php:283
+#, php-format
+msgid "Archiving files: %1$s of %2$s"
+msgstr "Dateien werden archiviert: %1$s von %2$s"
+
+#. translators: 1: table number, 2: total tables
+#: includes/backup/class-backup-job.php:319
+#, php-format
+msgid "Exporting database: table %1$d of %2$d"
+msgstr "Datenbank wird exportiert: Tabelle %1$d von %2$d"
+
+#: includes/backup/class-backup-job.php:334
+msgid "Encrypting"
+msgstr "Wird verschlüsselt"
+
+#: includes/backup/class-backup-job.php:355
+msgid "Uploading to storage destinations"
+msgstr "Wird zu den Speicherzielen hochgeladen"
+
+#. translators: %s: archive size
+#: includes/backup/class-backup-job.php:585
+#, php-format
+msgid "Backup complete (%s)."
+msgstr "Backup abgeschlossen (%s)."
+
+#: includes/backup/class-components.php:94
+msgid "WordPress core & root files"
+msgstr "WordPress-Core & Root-Dateien"
+
+#: includes/backup/class-components.php:96
+msgid "Plugins"
+msgstr "Plugins"
+
+#: includes/backup/class-components.php:98
+msgid "Themes"
+msgstr "Themes"
+
+#: includes/backup/class-components.php:100
+msgid "Uploads (media)"
+msgstr "Uploads (Medien)"
+
+#: includes/backup/class-components.php:102
+msgid "Other wp-content files"
+msgstr "Andere wp-content-Dateien"
+
+#: includes/backup/class-components.php:115
+msgid "Core"
+msgstr "Core"
+
+#: includes/backup/class-components.php:117
+msgid "wp-content"
+msgstr "wp-content"
+
+#: includes/backup/class-components.php:119
+msgid "Uploads"
+msgstr "Uploads"
+
+#: includes/class-installer.php:101
+msgid "Every five minutes (Afrit Backup Manager)"
+msgstr "Alle fünf Minuten (Afrit Backup Manager)"
+
+#: includes/class-util.php:128
+msgid ""
+"This site runs in WordPress Playground. Its browser sandbox cannot upload "
+"binary files such as backup archives, so remote destinations do not work "
+"here; backups stay on this server. On a real server, Dropbox, OneDrive, FTP "
+"and SFTP work normally."
+msgstr ""
+"Diese Website läuft in WordPress Playground. Dessen Browser-Sandbox kann "
+"keine Binärdateien wie Backup-Archive hochladen, daher funktionieren externe "
+"Speicherziele hier nicht; Backups bleiben auf diesem Server. Auf einem "
+"echten Server funktionieren Dropbox, OneDrive, FTP und SFTP normal."
+
+#. translators: 1: bytes downloaded, 2: total bytes
+#: includes/migration/class-pull-job.php:144
+#, php-format
+msgid "Downloading from the source site: %1$s of %2$s"
+msgstr "Wird von der Quell-Website heruntergeladen: %1$s von %2$s"
+
+#: includes/migration/class-pull-job.php:162
+msgid "Import complete. The backup can now be restored."
+msgstr "Import abgeschlossen. Das Backup kann jetzt wiederhergestellt werden."
+
+#. translators: 1: site name, 2: kind of run (Backup/Restore), 3: status
+#: includes/report/class-email-report.php:61
+#, php-format
+msgid "[%1$s] %2$s: %3$s"
+msgstr "[%1$s] %2$s: %3$s"
+
+#: includes/report/class-email-report.php:68
+msgid "Site"
+msgstr "Website"
+
+#: includes/report/class-email-report.php:70
+msgid "Trigger"
+msgstr "Auslöser"
+
+#: includes/report/class-email-report.php:91
+msgid "OK"
+msgstr "OK"
+
+#: includes/report/class-email-report.php:91
+msgid "failed"
+msgstr "fehlgeschlagen"
+
+#: includes/report/class-email-report.php:102
+msgid "Full report:"
+msgstr "Vollständiger Bericht:"
+
+#: includes/report/class-run-repository.php:167
+msgid "Success"
+msgstr "Erfolgreich"
+
+#: includes/report/class-run-repository.php:169
+msgid "Completed with warnings"
+msgstr "Mit Warnungen abgeschlossen"
+
+#: includes/report/class-run-repository.php:173
+msgid "Cancelled"
+msgstr "Abgebrochen"
+
+#: includes/report/class-run-repository.php:199
+msgid "Migration import"
+msgstr "Migrations-Import"
+
+#: includes/report/class-run-repository.php:207
+msgid "Manual"
+msgstr "Manuell"
+
+#: includes/report/class-run-repository.php:209
+msgid "Scheduled"
+msgstr "Geplant"
+
+#: includes/report/class-run-repository.php:211
+msgid "Before update"
+msgstr "Vor Update"
+
+#: includes/report/class-run-repository.php:213
+msgid "WP-CLI"
+msgstr "WP-CLI"
+
+#: includes/restore/class-restore-job.php:239
+msgid "Downloading backup files"
+msgstr "Backup-Dateien werden heruntergeladen"
+
+#: includes/restore/class-restore-job.php:317
+msgid "Decrypting"
+msgstr "Wird entschlüsselt"
+
+#. translators: 1: files restored, 2: total files
+#: includes/restore/class-restore-job.php:502
+#, php-format
+msgid "Restoring files: %1$s of %2$s"
+msgstr "Dateien werden wiederhergestellt: %1$s von %2$s"
+
+#: includes/restore/class-restore-job.php:588
+msgid "Looking for files that were not in the backup"
+msgstr "Suche nach Dateien, die nicht im Backup enthalten waren"
+
+#. translators: %s: number of SQL statements
+#: includes/restore/class-restore-job.php:659
+#, php-format
+msgid "Importing database: %s statements"
+msgstr "Datenbank wird importiert: %s Anweisungen"
+
+#: includes/restore/class-restore-job.php:715
+msgid "Replacing URLs and paths"
+msgstr "URLs und Pfade werden ersetzt"
+
+#: includes/restore/class-restore-job.php:893
+msgid "Restore complete."
+msgstr "Wiederherstellung abgeschlossen."
+
+#. translators: %s: what is being backed up
+#: includes/schedule/class-pre-update-backup.php:78
+#, php-format
+msgid "Backing up %s before the update&#8230;"
+msgstr "Backup von %s vor dem Update wird erstellt&#8230;"
+
+#. translators: %s: plugin, theme or "WordPress"
+#: includes/schedule/class-pre-update-backup.php:89
+#, php-format
+msgid "Before updating %s"
+msgstr "Vor dem Update von %s"
+
+#: includes/schedule/class-pre-update-backup.php:97
+msgid "Backup complete."
+msgstr "Backup abgeschlossen."
+
+#: includes/schedule/class-pre-update-backup.php:98
+msgid "The backup failed; the update continues. See Backup Manager → Reports."
+msgstr ""
+"Das Backup ist fehlgeschlagen; das Update wird fortgesetzt. Siehe Backup "
+"Manager → Berichte."
+
+#. translators: %d: number of hours
+#: includes/schedule/class-scheduler.php:168
+#, php-format
+msgid "Every %d hour"
+msgid_plural "Every %d hours"
+msgstr[0] "Jede %d Stunde"
+msgstr[1] "Alle %d Stunden"
+
+#. translators: %s: time of day
+#: includes/schedule/class-scheduler.php:171
+#, php-format
+msgid "Daily at %s"
+msgstr "Täglich um %s"
+
+#. translators: 1: weekday name, 2: time of day
+#: includes/schedule/class-scheduler.php:176
+#, php-format
+msgid "Weekly on %1$s at %2$s"
+msgstr "Wöchentlich am %1$s um %2$s"
+
+#. translators: 1: day of month, 2: time of day
+#: includes/schedule/class-scheduler.php:179
+#, php-format
+msgid "Monthly on day %1$d at %2$s"
+msgstr "Monatlich am %1$d. Tag um %2$s"
+
+#: includes/storage/class-destinations.php:30
+msgid "FTP / FTPS"
+msgstr "FTP / FTPS"
+
+#: includes/storage/class-destinations.php:45
+msgid "SFTP (SSH)"
+msgstr "SFTP (SSH)"
+
+#: includes/storage/class-destinations.php:60
+msgid "Dropbox"
+msgstr "Dropbox"
+
+#: includes/storage/class-destinations.php:71
+msgid "Microsoft OneDrive"
+msgstr "Microsoft OneDrive"
+
+#: includes/storage/class-destinations.php:86
+msgid "Host"
+msgstr "Host"
+
+#: includes/storage/class-destinations.php:87
+msgid "Port"
+msgstr "Port"
+
+#: includes/storage/class-destinations.php:88
+msgid "User name"
+msgstr "Benutzername"
+
+#: includes/storage/class-destinations.php:90
+msgid "Folder"
+msgstr "Ordner"
+
+#: includes/storage/class-destinations.php:91
+msgid "Use FTPS (TLS, certificate verified)"
+msgstr "FTPS verwenden (TLS, Zertifikat geprüft)"
+
+#: includes/storage/class-destinations.php:92
+msgid "Pinned TLS key (self-signed servers only)"
+msgstr "Festgelegter TLS-Schlüssel (nur für selbstsignierte Server)"
+
+#: includes/storage/class-destinations.php:93
+msgid "Passive mode"
+msgstr "Passiver Modus"
+
+#: includes/storage/class-destinations.php:94
+msgid "Private key (instead of a password)"
+msgstr "Privater Schlüssel (anstelle eines Passworts)"
+
+#: includes/storage/class-destinations.php:95
+msgid "Key passphrase"
+msgstr "Schlüssel-Passphrase"
+
+#: includes/storage/class-destinations.php:96
+msgid "Pinned host key fingerprint"
+msgstr "Fingerabdruck des festgelegten Host-Schlüssels"
+
+#: includes/storage/class-destinations.php:97
+msgid "Own Dropbox app"
+msgstr "Eigene Dropbox-App"
+
+#: includes/storage/class-destinations.php:98
+msgid "App key"
+msgstr "App-Key"
+
+#: includes/storage/class-destinations.php:99
+msgid "App secret"
+msgstr "App-Secret"
+
+#: includes/storage/class-destinations.php:100
+msgid "Application (client) ID"
+msgstr "Anwendungs-ID (Client)"
+
+#: includes/storage/class-destinations.php:101
+msgid "Client secret"
+msgstr "Geheimer Clientschlüssel"
+
+#: includes/storage/class-destinations.php:102
+msgid "Tenant"
+msgstr "Mandant"
+
+#. translators: %s: destination id
+#: includes/storage/class-destinations.php:194
+#, php-format
+msgid "Unknown destination %s."
+msgstr "Unbekanntes Speicherziel %s."
+
+#: includes/storage/class-storage-dropbox.php:169
+msgid ""
+"This Dropbox destination is not connected yet. Use \"Connect\" on the "
+"Storage tab."
+msgstr ""
+"Dieses Dropbox-Speicherziel ist noch nicht verbunden. Verwende „Verbinden“ "
+"im Tab „Speicher“."
+
+#: includes/storage/class-storage-dropbox.php:193
+msgid "Dropbox refused to renew access. Reconnect the destination."
+msgstr ""
+"Dropbox hat die Erneuerung des Zugriffs verweigert. Verbinde das "
+"Speicherziel erneut."
+
+#: includes/storage/class-storage-ftp.php:85
+msgid "The FTP host name is not valid."
+msgstr "Der FTP-Hostname ist ungültig."
+
+#: includes/storage/class-storage-ftp.php:107
+msgid "The PHP cURL extension is not installed on this server."
+msgstr "Die PHP-Erweiterung cURL ist auf diesem Server nicht installiert."
+
+#: includes/storage/class-storage-ftp.php:176
+msgid ""
+"The server does not support FTPS (TLS). Nothing was sent. Use SFTP, enable "
+"TLS on the server, or — only on a trusted network — switch FTPS off."
+msgstr "Der Server unterstützt kein FTPS (TLS). Es wurde nichts gesendet. Verwende SFTP, aktiviere TLS auf dem Server oder schalte FTPS – nur in einem vertrauenswürdigen Netzwerk – aus."
+
+#: includes/storage/class-storage-ftp.php:179
+msgid ""
+"The server's TLS certificate could not be verified, so nothing was sent. If "
+"this is your own server with a self-signed certificate, pin its key (see "
+"\"Test\")."
+msgstr "Das TLS-Zertifikat des Servers konnte nicht geprüft werden, deshalb wurde nichts gesendet. Ist es dein eigener Server mit selbstsigniertem Zertifikat, lege seinen Schlüssel fest (siehe „Testen“)."
+
+#: includes/storage/class-storage-ftp.php:181
+msgid ""
+"The server's TLS key does not match the pinned key. Nothing was sent. If the "
+"certificate was replaced on purpose, update the pinned key."
+msgstr "Der TLS-Schlüssel des Servers stimmt nicht mit dem festgelegten Schlüssel überein. Es wurde nichts gesendet. Wurde das Zertifikat absichtlich ersetzt, aktualisiere den festgelegten Schlüssel."
+
+#: includes/storage/class-storage-ftp.php:183
+msgid "The FTP server rejected the user name or password."
+msgstr "Der FTP-Server hat den Benutzernamen oder das Passwort abgelehnt."
+
+#: includes/storage/class-storage-ftp.php:187
+msgid "Could not connect to the FTP server."
+msgstr "Keine Verbindung zum FTP-Server möglich."
+
+#. translators: %s: public key pin
+#: includes/storage/class-storage-ftp.php:267
+#, php-format
+msgid ""
+"The server presented the key %s. Compare it with the key on your server; "
+"only if it matches, enter it as pinned key."
+msgstr "Der Server hat den Schlüssel %s vorgelegt. Vergleiche ihn mit dem Schlüssel auf deinem Server; nur wenn er übereinstimmt, trage ihn als festgelegten Schlüssel ein."
+
+#: includes/storage/class-storage-ftp.php:350
+msgid "The file does not exist on the FTP server."
+msgstr "Die Datei existiert auf dem FTP-Server nicht."
+
+#: includes/storage/class-storage-local.php:32
+msgid "The backup directory is not writable."
+msgstr "Das Backup-Verzeichnis ist nicht beschreibbar."
+
+#: includes/storage/class-storage-onedrive.php:127
+msgid ""
+"This OneDrive destination is not connected yet. Use \"Connect\" on the "
+"Storage tab."
+msgstr ""
+"Dieses OneDrive-Speicherziel ist noch nicht verbunden. Verwende „Verbinden“ "
+"im Tab „Speicher“."
+
+#: includes/storage/class-storage-onedrive.php:142
+msgid "Microsoft refused to renew access. Reconnect the destination."
+msgstr ""
+"Microsoft hat die Erneuerung des Zugriffs verweigert. Verbinde das "
+"Speicherziel erneut."
+
+#: includes/storage/class-storage-sftp.php:55
+msgid "The SFTP library is missing from the plugin. Reinstall the plugin."
+msgstr "Die SFTP-Bibliothek fehlt im Plugin. Installiere das Plugin neu."
+
+#. translators: %s: host name
+#: includes/storage/class-storage-sftp.php:66
+#, php-format
+msgid "Could not connect to %s."
+msgstr "Verbindung zu %s konnte nicht hergestellt werden."
+
+#. translators: 1: expected fingerprint, 2: received fingerprint
+#: includes/storage/class-storage-sftp.php:77
+#, php-format
+msgid ""
+"The server's host key has changed (expected %1$s, got %2$s). Nothing was "
+"sent. If the change is expected, clear the fingerprint in the destination "
+"settings."
+msgstr ""
+"Der Host-Schlüssel des Servers hat sich geändert (erwartet: %1$s, erhalten: "
+"%2$s). Es wurde nichts gesendet. Wenn die Änderung beabsichtigt ist, lösche "
+"den Fingerabdruck in den Einstellungen des Speicherziels."
+
+#: includes/storage/class-storage-sftp.php:92
+msgid "The private key could not be read. Check the key and its passphrase."
+msgstr ""
+"Der private Schlüssel konnte nicht gelesen werden. Prüfe den Schlüssel und "
+"seine Passphrase."
+
+#: includes/storage/class-storage-sftp.php:100
+msgid "The SFTP server rejected the login."
+msgstr "Der SFTP-Server hat die Anmeldung abgelehnt."
+
+#: includes/storage/class-storage-sftp.php:133
+msgid "Connected, but the folder is not writable."
+msgstr "Verbunden, aber der Ordner ist nicht beschreibbar."
+
+#: includes/storage/class-storage-sftp.php:168
+msgid "The SFTP upload failed."
+msgstr "Der SFTP-Upload ist fehlgeschlagen."
+
+#: includes/storage/class-storage-sftp.php:197
+msgid "The SFTP download failed."
+msgstr "Der SFTP-Download ist fehlgeschlagen."
+
+#~ msgid ""
+#~ "Plain FTP sends the password unencrypted. Use FTPS or SFTP whenever the "
+#~ "server supports it."
+#~ msgstr ""
+#~ "Einfaches FTP überträgt das Passwort unverschlüsselt. Verwende FTPS oder "
+#~ "SFTP, wann immer der Server es unterstützt."
+
+#~ msgid "Use FTPS (explicit TLS)"
+#~ msgstr "FTPS verwenden (explizites TLS)"
+
+#~ msgid "The PHP FTP extension is not installed on this server."
+#~ msgstr "Die PHP-FTP-Erweiterung ist auf diesem Server nicht installiert."
+
+#~ msgid "The FTP upload failed."
+#~ msgstr "Der FTP-Upload ist fehlgeschlagen."
+
+#~ msgid "The FTP download failed."
+#~ msgstr "Der FTP-Download ist fehlgeschlagen."
+
+#~ msgid "Exclude"
+#~ msgstr "Ausschließen"
+
+#~ msgid ""
+#~ "One pattern per line. Paths start with root/ (the WordPress directory) or "
+#~ "content/ (wp-content). Examples: content/uploads/cache/*  ·  *.log  ·  "
+#~ "root/old-site/*. Caches and other plugins' backup folders are always "
+#~ "excluded."
+#~ msgstr ""
+#~ "Ein Muster pro Zeile. Pfade beginnen mit root/ (dem WordPress-"
+#~ "Verzeichnis) oder content/ (wp-content). Beispiele: content/uploads/cache/"
+#~ "*  ·  *.log  ·  root/old-site/*. Caches und die Backup-Ordner anderer "
+#~ "Plugins werden immer ausgeschlossen."
+
+#~ msgid ""
+#~ "The connection could not be completed. Check the app credentials and the "
+#~ "redirect URI, then try again."
+#~ msgstr ""
+#~ "Die Verbindung konnte nicht hergestellt werden. Prüfe die App-"
+#~ "Zugangsdaten und die Redirect-URI und versuche es dann erneut."

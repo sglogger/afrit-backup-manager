@@ -1,0 +1,52 @@
+{
+	"name": "sglogger/afrit-backup-manager",
+	"description": "Backups, restores and migrations for the whole WordPress installation: incremental file backups, selectable database tables, encryption, scheduling, retention rules and simultaneous upload to this server, FTP, SFTP, Dropbox and OneDrive. There is no PRO version. All free.",
+	"type": "wordpress-plugin",
+	"license": "GPL-2.0-or-later",
+	"authors": [
+		{
+			"name": "Steven Glogger",
+			"homepage": "https://www.glogger.ch"
+		}
+	],
+	"require": {
+		"php": ">=8.1",
+		"ext-json": "*",
+		"phpseclib/phpseclib": "^3.0"
+	},
+	"require-dev": {
+		"phpunit/phpunit": "^10.5",
+		"squizlabs/php_codesniffer": "^3.9",
+		"wp-coding-standards/wpcs": "^3.1",
+		"phpcompatibility/php-compatibility": "^9.3",
+		"dealerdirect/phpcodesniffer-composer-installer": "^1.0"
+	},
+	"autoload": {
+		"classmap": [
+			"includes/",
+			"admin/"
+		],
+		"exclude-from-classmap": [
+			"admin/views/"
+		]
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"AfritBackupManager\\Tests\\": "tests/"
+		}
+	},
+	"config": {
+		"platform": {
+			"php": "8.1.0"
+		},
+		"sort-packages": true,
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		}
+	},
+	"scripts": {
+		"test": "phpunit",
+		"lint": "phpcs",
+		"fix": "phpcbf"
+	}
+}

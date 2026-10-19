@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-label="Afrit Backup Manager icon">
+  <defs>
+    <linearGradient id="bg" x1="120" y1="80" x2="900" y2="940" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0B1739"/>
+      <stop offset="1" stop-color="#071022"/>
+    </linearGradient>
+    <linearGradient id="ring" x1="230" y1="200" x2="800" y2="820" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#39D6FF"/>
+      <stop offset="1" stop-color="#4B7CFF"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="430" y1="420" x2="600" y2="680" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#67F4D1"/>
+      <stop offset="1" stop-color="#23C6B7"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="26" stdDeviation="32" flood-color="#000000" flood-opacity=".38"/>
+    </filter>
+    <filter id="glow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="14" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- App tile -->
+  <rect x="72" y="72" width="880" height="880" rx="224" fill="url(#bg)"/>
+  <path d="M160 284C256 154 396 116 512 116c138 0 275 58 364 169" fill="none" stroke="#17346B" stroke-width="8" stroke-linecap="round" opacity=".55"/>
+  <circle cx="816" cy="208" r="9" fill="#39D6FF" opacity=".75"/>
+  <circle cx="854" cy="248" r="5" fill="#67F4D1" opacity=".7"/>
+
+  <!-- Restore / sync ring: open circle with an arrow head -->
+  <g filter="url(#shadow)">
+    <path d="M254 690 A300 300 0 1 1 778 676" fill="none" stroke="url(#ring)" stroke-width="34" stroke-linecap="round"/>
+    <path d="M818 600 L782 690 L690 664" fill="none" stroke="url(#ring)" stroke-width="34" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <path d="M300 760 A300 300 0 0 0 724 762" fill="none" stroke="#39D6FF" stroke-width="8" stroke-linecap="round" stroke-dasharray="2 26" opacity=".45"/>
+
+  <!-- Database cylinder -->
+  <g>
+    <path d="M372 378 V610 C372 646 435 674 512 674 C589 674 652 646 652 610 V378"
+          fill="#0D1D3C" stroke="#D8F7FF" stroke-width="26" stroke-linejoin="round"/>
+    <ellipse cx="512" cy="378" rx="140" ry="46" fill="#0A1832" stroke="#D8F7FF" stroke-width="26"/>
+    <path d="M372 456 C372 492 435 520 512 520 C589 520 652 492 652 456" fill="none" stroke="#D8F7FF" stroke-width="18" opacity=".55"/>
+    <path d="M372 534 C372 570 435 598 512 598 C589 598 652 570 652 534" fill="none" stroke="#D8F7FF" stroke-width="18" opacity=".55"/>
+  </g>
+
+  <!-- Upward arrow: backup -->
+  <path d="M512 612 V470" stroke="url(#accent)" stroke-width="30" stroke-linecap="round"/>
+  <path d="M458 520 L512 466 L566 520" fill="none" stroke="url(#accent)" stroke-width="30" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="512" cy="378" r="20" fill="#67F4D1" filter="url(#glow)"/>
+
+</svg>

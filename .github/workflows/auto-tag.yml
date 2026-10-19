@@ -1,0 +1,240 @@
+name: Auto-tag & release from plugin version
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - afrit-backup-manager.php
+      - composer.lock
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  tag-and-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      # The version lives in three places that must never drift apart: the
+      # plugin header, the runtime constant, and readme.txt's Stable tag
+      # (which is what WordPress.org serves as the current release).
+      - name: Read and cross-check version
+        id: ver
+        run: |
+          HEADER=$(grep -E '^\s*\*\s*Version:' afrit-backup-manager.php | head -n1 | awk -F: '{print $2}' | xargs)
+          CONST=$(grep -E "define\(\s*'AFBM_VERSION'" afrit-backup-manager.php | sed -E "s/.*'([0-9.]+)'.*/\1/")
+          STABLE=$(grep -E '^Stable tag:' readme.txt | awk -F: '{print $2}' | xargs)
+          if [ -z "$HEADER" ]; then
+            echo "::error::Could not find Version header in afrit-backup-manager.php"
+            exit 1
+          fi
+          if [ "$HEADER" != "$CONST" ]; then
+            echo "::error::Version header ($HEADER) and AFBM_VERSION ($CONST) disagree"
+            exit 1
+          fi
+          if [ "$HEADER" != "$STABLE" ]; then
+            echo "::error::Version header ($HEADER) and readme.txt Stable tag ($STABLE) disagree"
+            exit 1
+          fi
+          echo "version=$HEADER" >> "$GITHUB_OUTPUT"
+          echo "tag=v$HEADER"    >> "$GITHUB_OUTPUT"
+
+      - name: Check if tag already exists
+        id: exists
+        run: |
+          if git rev-parse -q --verify "refs/tags/${{ steps.ver.outputs.tag }}" >/dev/null; then
+            echo "Tag ${{ steps.ver.outputs.tag }} already exists – skipping tag creation."
+            echo "tag_exists=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "tag_exists=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Create & push tag
+        if: steps.exists.outputs.tag_exists == 'false'
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git tag -a "${{ steps.ver.outputs.tag }}" -m "Release ${{ steps.ver.outputs.tag }}"
+          git push origin "${{ steps.ver.outputs.tag }}"
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+          tools: composer:v2
+          coverage: none
+
+      # vendor/ SHIPS in this plugin (phpseclib is the runtime dependency of
+      # the SFTP destination), so it is installed here without dev packages and is NOT
+      # excluded from the ZIP below.
+      - name: Install runtime dependencies only
+        run: composer install --no-dev --no-interaction --no-progress --optimize-autoloader --classmap-authoritative --prefer-dist
+
+      - name: Assert no dev packages leaked into vendor/
+        run: |
+          test -f vendor/autoload.php || { echo "::error::vendor/autoload.php missing"; exit 1; }
+          for d in phpunit squizlabs wp-coding-standards phpcompatibility dealerdirect; do
+            if [ -d "vendor/$d" ]; then
+              echo "::error::dev package vendor/$d present — refusing to ship"
+              exit 1
+            fi
+          done
+
+      # Deliberately an ALLOW list, not an exclude list. With excludes, every
+      # file added to the repo later (a doc, a scratch script, a new tool
+      # config) silently ends up in the shipped plugin. With an allow list it
+      # cannot: anything not named here is simply never copied.
+      #
+      # Shipped: the bootstrap, the code, the assets, the two files WordPress
+      # itself consumes — readme.txt (the plugin details modal is rendered from
+      # it) and LICENSE.txt (the GPL requires it to accompany distribution) —
+      # and composer.json, which describes the vendor/ tree that ships with it.
+      - name: Stage plugin files
+        run: |
+          SLUG=afrit-backup-manager
+          STAGE="$RUNNER_TEMP/$SLUG"
+          rm -rf "$STAGE"
+          mkdir -p "$STAGE"
+
+          # composer.json ships on purpose. vendor/ is a Composer-built tree
+          # and it is part of the plugin, so the manifest that describes it has
+          # to travel with it — Plugin Check flags a vendor/ directory whose
+          # composer.json is missing. composer.lock stays out: it pins dev
+          # packages that are not in the ZIP.
+          for path in \
+            afrit-backup-manager.php \
+            uninstall.php \
+            index.php \
+            readme.txt \
+            LICENSE.txt \
+            composer.json
+          do
+            test -f "$path" || { echo "::error::required file $path is missing"; exit 1; }
+            cp "$path" "$STAGE/"
+          done
+
+          for dir in includes admin assets vendor; do
+            test -d "$dir" || { echo "::error::required directory $dir is missing"; exit 1; }
+            cp -a "$dir" "$STAGE/"
+          done
+
+          # Third-party packages ship their own test suites and docs. None of
+          # it is needed at runtime and it is a meaningful share of the ZIP.
+          #
+          # The underscore-prefixed names matter: a test or demo directory in a
+          # dependency can hold a PHP file that answers requests on its own,
+          # outside WordPress — exactly what the review guidelines are about —
+          # so none of them may reach the ZIP.
+          find "$STAGE/vendor" -type d \
+            \( -name tests -o -name test -o -name _test -o -name _tests \
+               -o -name doc -o -name docs \
+               -o -name examples -o -name .github -o -name bin \) \
+            -prune -exec rm -rf {} + 2>/dev/null || true
+          find "$STAGE" \( -name '*.md' -o -name '*.po' -o -name '*.pot' -o -name '.DS_Store' \
+                           -o -name '.gitignore' -o -name '.gitattributes' \
+                           -o -name 'phpunit.xml*' -o -name '.editorconfig' \) \
+            -delete 2>/dev/null || true
+
+          # The 1024px master is a source asset for store listings, not a
+          # runtime one: nothing in the plugin references it, and at ~730 KB it
+          # is twice the weight of the entire rest of the ZIP. The SVG and the
+          # 256px PNG are the two that ship.
+          rm -f "$STAGE/assets/logos/"*-1024x1024.png
+
+      # A ZIP that carries dev scaffolding is a packaging bug, so fail the
+      # release rather than publish it.
+      - name: Verify nothing unwanted was staged
+        run: |
+          SLUG=afrit-backup-manager
+          STAGE="$RUNNER_TEMP/$SLUG"
+
+          echo "--- staged tree (excluding vendor internals) ---"
+          find "$STAGE" -not -path '*/vendor/*/*' | sort
+
+          # Never acceptable anywhere in the package.
+          ANYWHERE='docker-compose|CLAUDE\.md|/\.env|local_wp_core|local_wp_target|db_data|node_modules|/\.git|/_?tests?/|/steven/|\.pot?$|\.mo$|\.zip$|\.Dockerfile$'
+          if find "$STAGE" | grep -Ei "$ANYWHERE"; then
+            echo "::error::development files found in the staged plugin (listed above)"
+            exit 1
+          fi
+
+          # Tooling config is only forbidden at the plugin root. A vendored
+          # package legitimately carries its own composer.json, and deleting
+          # files from inside a dependency is how you break it.
+          for unwanted in composer.lock phpunit.xml.dist phpcs.xml.dist docker-compose.yml-example .env.example README.md CHANGELOG.md; do
+            if [ -e "$STAGE/$unwanted" ]; then
+              echo "::error::$unwanted must not ship inside the plugin"
+              exit 1
+            fi
+          done
+
+          for unwanted in tests dev docs .github .wordpress-org steven local_wp_core local_wp_target db_data screenshots languages; do
+            if [ -e "$STAGE/$unwanted" ]; then
+              echo "::error::directory $unwanted must not ship inside the plugin"
+              exit 1
+            fi
+          done
+
+          # A WordPress plugin is identified by its header; without this the
+          # ZIP is not installable at all.
+          grep -q '^\s*\*\s*Plugin Name:' "$STAGE/afrit-backup-manager.php" \
+            || { echo "::error::plugin header missing from the staged bootstrap"; exit 1; }
+
+          test -f "$STAGE/vendor/autoload.php" || { echo "::error::vendor/autoload.php missing from the staged plugin"; exit 1; }
+
+          # A missing runtime dependency is worse than a stray dev one: the
+          # feature it backs would fail at the moment a user reaches for it
+          # rather than here.
+          for f in \
+            vendor/phpseclib/phpseclib/phpseclib/Net/SFTP.php \
+            vendor/phpseclib/phpseclib/phpseclib/Crypt/PublicKeyLoader.php
+          do
+            test -f "$STAGE/$f" || { echo "::error::runtime dependency $f missing from the staged plugin"; exit 1; }
+          done
+          test -f "$STAGE/composer.json" || { echo "::error::composer.json missing from the staged plugin — vendor/ ships, so its manifest must too"; exit 1; }
+
+          echo "--- staged size ---"
+          du -sh "$STAGE"
+
+      - name: Build plugin ZIP
+        run: |
+          SLUG=afrit-backup-manager
+          cd "$RUNNER_TEMP"
+          zip -rq "$GITHUB_WORKSPACE/$SLUG.zip" "$SLUG"
+          unzip -l "$GITHUB_WORKSPACE/$SLUG.zip" | tail -1
+
+      # The release body is not decoration: it is the ONLY description of a new
+      # version that an un-updated site can see. WordPress renders it in the
+      # "View version X details" modal, because the readme.txt on that site
+      # still describes the version it already has. Left to the auto-generated
+      # notes, that modal shows a compare link and nothing else.
+      - name: Build release notes from readme.txt
+        run: |
+          VERSION="${{ steps.ver.outputs.version }}"
+          awk -v v="= $VERSION =" '
+            $0 == v { f = 1; next }
+            f && /^= [0-9]/ { exit }
+            f { print }
+          ' readme.txt > release-notes.md
+
+          if [ ! -s release-notes.md ]; then
+            echo "::warning::readme.txt has no '= $VERSION =' section; the details modal will have nothing to show for this release."
+            printf 'See CHANGELOG.md for what changed in %s.\n' "$VERSION" > release-notes.md
+          fi
+
+          echo "--- release notes ---"
+          cat release-notes.md
+
+      - name: Create / update GitHub release
+        uses: softprops/action-gh-release@v3
+        with:
+          tag_name: ${{ steps.ver.outputs.tag }}
+          files: afrit-backup-manager.zip
+          body_path: release-notes.md
+          generate_release_notes: true
+          fail_on_unmatched_files: true

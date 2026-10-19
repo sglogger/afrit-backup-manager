@@ -1,0 +1,427 @@
+/*
+ * Afrit Backup Manager — admin screens.
+ *
+ * Deliberately small: stock WordPress admin markup does most of the work.
+ * Colours are the WordPress admin core palette, so the screens look native
+ * under every admin colour scheme.
+ */
+
+.afbm-wrap {
+	--afbm-ok: #00a32a;
+	--afbm-bad: #d63638;
+	--afbm-warn: #dba617;
+	--afbm-info: #2271b1;
+	--afbm-muted: #646970;
+	--afbm-border: #c3c4c7;
+	--afbm-soft: #f6f7f7;
+	max-width: 1200px;
+}
+
+.afbm-title {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.afbm-title img {
+	border-radius: 8px;
+}
+
+.afbm-muted {
+	color: var(--afbm-muted);
+}
+
+.afbm-card {
+	background: #fff;
+	border: 1px solid var(--afbm-border);
+	border-radius: 4px;
+	padding: 4px 20px 16px;
+	margin: 16px 0;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+}
+
+.afbm-card h2 {
+	font-size: 1.2em;
+}
+
+.afbm-columns {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+	gap: 0 16px;
+}
+
+/* Status tiles ------------------------------------------------------------- */
+
+.afbm-tiles {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+	gap: 12px;
+	margin: 16px 0;
+}
+
+.afbm-tile {
+	display: flex;
+	gap: 12px;
+	background: #fff;
+	border: 1px solid var(--afbm-border);
+	border-left: 4px solid var(--afbm-info);
+	border-radius: 4px;
+	padding: 12px 14px;
+}
+
+.afbm-tile .dashicons {
+	font-size: 28px;
+	width: 28px;
+	height: 28px;
+	color: var(--afbm-info);
+}
+
+.afbm-tile-ok { border-left-color: var(--afbm-ok); }
+.afbm-tile-ok .dashicons { color: var(--afbm-ok); }
+.afbm-tile-warn { border-left-color: var(--afbm-warn); }
+.afbm-tile-warn .dashicons { color: var(--afbm-warn); }
+.afbm-tile-bad { border-left-color: var(--afbm-bad); }
+.afbm-tile-bad .dashicons { color: var(--afbm-bad); }
+
+.afbm-tile-label {
+	color: var(--afbm-muted);
+	font-size: 12px;
+	text-transform: uppercase;
+	letter-spacing: 0.03em;
+}
+
+.afbm-tile-value {
+	font-size: 16px;
+	font-weight: 600;
+	margin: 2px 0;
+}
+
+.afbm-tile-detail {
+	color: var(--afbm-muted);
+	font-size: 12px;
+	word-break: break-word;
+}
+
+/* Setup -------------------------------------------------------------------- */
+
+.afbm-setup {
+	border-left: 4px solid var(--afbm-info);
+}
+
+.afbm-checklist {
+	list-style: none;
+	margin-left: 0;
+}
+
+.afbm-checklist li::before {
+	content: "\f147";
+	font-family: dashicons;
+	color: var(--afbm-ok);
+	margin-right: 6px;
+	vertical-align: -2px;
+}
+
+/* Progress ----------------------------------------------------------------- */
+
+.afbm-progress[hidden] {
+	display: none;
+}
+
+.afbm-progress-head {
+	display: flex;
+	gap: 12px;
+	align-items: baseline;
+	margin: 12px 0 8px;
+	flex-wrap: wrap;
+}
+
+.afbm-bar {
+	height: 10px;
+	border-radius: 5px;
+	background: #f0f0f1;
+	overflow: hidden;
+	margin-bottom: 8px;
+}
+
+.afbm-bar > div {
+	height: 100%;
+	background: var(--afbm-info);
+	transition: width 0.6s ease;
+}
+
+/* Badges, forms, tables ------------------------------------------------------ */
+
+.afbm-badge {
+	display: inline-block;
+	padding: 2px 8px;
+	border-radius: 3px;
+	color: #fff;
+	font-size: 11px;
+	font-weight: 600;
+	line-height: 1.6;
+	white-space: nowrap;
+}
+
+.afbm-inline {
+	display: inline;
+}
+
+.afbm-components label {
+	display: inline-block;
+	margin: 0 16px 8px 0;
+}
+
+.afbm-table-list {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+	gap: 4px 16px;
+	max-height: 320px;
+	overflow: auto;
+	padding: 8px;
+	background: var(--afbm-soft);
+	border: 1px solid #dcdcde;
+}
+
+.afbm-table-list-wide {
+	max-height: none;
+}
+
+.afbm-facts {
+	max-width: 900px;
+}
+
+.afbm-facts th {
+	width: 220px;
+}
+
+.afbm-compact td {
+	vertical-align: middle;
+}
+
+.afbm-id {
+	font-size: 11px;
+	background: transparent;
+	padding: 0;
+	color: var(--afbm-muted);
+}
+
+.afbm-toolbar {
+	display: flex;
+	gap: 8px;
+	align-items: flex-start;
+	margin: 12px 0;
+	flex-wrap: wrap;
+}
+
+.afbm-toolbar .dashicons,
+.afbm-downloads .dashicons {
+	vertical-align: text-bottom;
+}
+
+.afbm-upload > summary,
+.afbm-downloads > summary {
+	list-style: none;
+	cursor: pointer;
+}
+
+.afbm-upload > summary::-webkit-details-marker,
+.afbm-downloads > summary::-webkit-details-marker {
+	display: none;
+}
+
+.afbm-upload .afbm-card {
+	margin-top: 8px;
+	min-width: 320px;
+}
+
+.afbm-downloads {
+	display: inline-block;
+	position: relative;
+}
+
+.afbm-downloads ul {
+	position: absolute;
+	z-index: 10;
+	background: #fff;
+	border: 1px solid var(--afbm-border);
+	padding: 8px 12px;
+	margin: 4px 0 0;
+	min-width: 220px;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.afbm-replace input {
+	width: 100%;
+}
+
+.afbm-replace td:last-child {
+	width: 30px;
+	text-align: center;
+}
+
+.afbm-guide {
+	background: var(--afbm-soft);
+	border-left: 4px solid var(--afbm-info);
+	padding: 4px 16px;
+	margin-bottom: 12px;
+}
+
+.afbm-wrap .wp-list-table .column-actions {
+	width: 210px;
+}
+
+.afbm-wrap .wp-list-table .column-actions .button {
+	margin: 0 4px 4px 0;
+}
+
+.afbm-wrap .button.afbm-button-delete {
+	color: var(--afbm-bad);
+	border-color: var(--afbm-bad);
+}
+
+.afbm-wrap .button.afbm-button-delete:hover,
+.afbm-wrap .button.afbm-button-delete:focus {
+	color: #fff;
+	background: var(--afbm-bad);
+	border-color: var(--afbm-bad);
+	box-shadow: 0 0 0 1px var(--afbm-bad);
+}
+
+.afbm-actions form {
+	margin-left: 4px;
+}
+
+.afbm-clear {
+	margin-left: 8px;
+}
+
+.afbm-add .button {
+	margin-left: 4px;
+}
+
+.afbm-when {
+	display: none;
+	margin-left: 6px;
+}
+
+.afbm-schedule[data-frequency="interval"] .afbm-when-interval,
+.afbm-schedule[data-frequency="daily"] .afbm-when-daily,
+.afbm-schedule[data-frequency="weekly"] .afbm-when-weekly,
+.afbm-schedule[data-frequency="monthly"] .afbm-when-monthly {
+	display: inline;
+}
+
+.afbm-step {
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	line-height: 24px;
+	border-radius: 50%;
+	background: var(--afbm-info);
+	color: #fff;
+	text-align: center;
+	font-size: 13px;
+	margin-right: 4px;
+}
+
+.afbm-wide {
+	max-width: 100%;
+}
+
+.afbm-log,
+.afbm-code {
+	background: var(--afbm-soft);
+	border: 1px solid #dcdcde;
+	padding: 12px;
+	overflow: auto;
+	max-height: 600px;
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.afbm-dest-table[data-own-app="0"] .afbm-own-only {
+	display: none;
+}
+
+.afbm-connect {
+	border-left: 4px solid var(--afbm-info);
+}
+
+.afbm-connect ol li {
+	margin-bottom: 10px;
+}
+
+.afbm-tree {
+	background: #fff;
+	border: 1px solid var(--afbm-border);
+	padding: 8px 12px;
+	max-width: 900px;
+	max-height: 560px;
+	overflow: auto;
+}
+
+.afbm-tree ul {
+	list-style: none;
+	margin: 0 0 0 22px;
+	padding: 0;
+}
+
+.afbm-tree > ul {
+	margin-left: 0;
+}
+
+.afbm-tree li {
+	margin: 0;
+}
+
+.afbm-tree-row {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	padding: 2px 0;
+}
+
+.afbm-tree-toggle {
+	width: 20px;
+	border: 0;
+	background: none;
+	cursor: pointer;
+	color: var(--afbm-muted);
+	padding: 0;
+}
+
+.afbm-tree-toggle:disabled {
+	cursor: default;
+}
+
+.afbm-tree-rule .button-link {
+	margin-left: 2px;
+	text-decoration: none;
+	color: var(--afbm-bad);
+}
+
+.afbm-tree-legend {
+	display: flex;
+	gap: 18px;
+	flex-wrap: wrap;
+	margin: 12px 0 8px;
+	color: var(--afbm-muted);
+}
+
+.afbm-rule-list li {
+	margin-bottom: 4px;
+}
+
+.afbm-gate {
+	max-width: 480px;
+}
+
+@media screen and (max-width: 782px) {
+	.afbm-columns {
+		grid-template-columns: 1fr;
+	}
+
+	.afbm-facts th {
+		width: auto;
+	}
+}

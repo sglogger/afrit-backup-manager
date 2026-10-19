@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<ruleset name="Afrit Backup Manager">
+	<description>WordPress coding standards for Afrit Backup Manager.</description>
+
+	<file>.</file>
+
+	<exclude-pattern>/vendor/*</exclude-pattern>
+	<exclude-pattern>/node_modules/*</exclude-pattern>
+	<exclude-pattern>/local_wp_core/*</exclude-pattern>
+	<exclude-pattern>/local_wp_target/*</exclude-pattern>
+	<exclude-pattern>/db_data/*</exclude-pattern>
+	<exclude-pattern>/steven/*</exclude-pattern>
+	<exclude-pattern>/dist/*</exclude-pattern>
+	<exclude-pattern>/dev/screenshots/node_modules/*</exclude-pattern>
+
+	<arg name="extensions" value="php"/>
+	<arg name="colors"/>
+	<arg value="ps"/>
+	<arg name="parallel" value="8"/>
+
+	<rule ref="WordPress-Extra">
+		<!-- Files are class-kebab-case.php holding Underscore_Case classes,
+			 the WordPress core convention. The sniff expects one or the other
+			 to be renamed; we follow core, not PSR-4. -->
+		<exclude name="WordPress.Files.FileName.InvalidClassFileName"/>
+
+		<!-- Short array syntax is the house style and is used consistently
+			 across this author's plugins. WPCS 3 defaults to long arrays. -->
+		<exclude name="Universal.Arrays.DisallowShortArraySyntax"/>
+	</rule>
+	<rule ref="WordPress.WP.I18n">
+		<properties>
+			<property name="text_domain" type="array" value="afrit-backup-manager"/>
+		</properties>
+	</rule>
+
+	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
+		<properties>
+			<property name="prefixes" type="array" value="afbm,AFBM,AfritBackupManager"/>
+		</properties>
+	</rule>
+
+	<config name="minimum_wp_version" value="6.5"/>
+
+	<rule ref="PHPCompatibility"/>
+	<config name="testVersion" value="8.1-"/>
+
+	<!-- Deliberate deviations, each for a reason rather than convenience.
+
+		 Anything suppressed here is invisible to the Plugin Check plugin, which
+		 runs its own ruleset and never reads this file. So a suppression lives
+		 here only when it applies to the project as a whole, to an entire file,
+		 or to the test suite; anything that turns on the circumstances of one
+		 statement is an inline phpcs:ignore (or a
+		 phpcs:disable/phpcs:enable pair, which is what a multi-line $wpdb call
+		 needs) carrying its justification at the point it applies to. That way
+		 the reasoning travels with the code and Plugin Check honours it too.
+
+		 DisallowShortTernary: `?:` is used throughout for "value or fallback"
+		 and reads better than repeating the expression.
+
+		 UnusedFunctionParameter: hook callbacks have to match the signature
+		 WordPress passes, whether or not every argument is needed.
+
+		 NoReservedKeywordParameterNames: same reason — the names come from the
+		 core hook signatures. -->
+	<rule ref="Universal.Operators.DisallowShortTernary">
+		<severity>0</severity>
+	</rule>
+	<rule ref="Generic.CodeAnalysis.UnusedFunctionParameter">
+		<severity>0</severity>
+	</rule>
+	<rule ref="Universal.NamingConventions.NoReservedKeywordParameterNames">
+		<severity>0</severity>
+	</rule>
+	<!-- Direct filesystem access is annotated inline, not exempted here.
+
+		 The backup engine reads and writes files directly and on purpose:
+		 WP_Filesystem is not initialised during cron and loopback requests,
+		 which is exactly when backups run, and it can only hand back a file
+		 whole, which multi-gigabyte archives rule out. Errors are silenced in the same
+		 few places for the same kind of reason — a file vanishing mid-scan, or a
+		 directory that cannot be read, is ordinary rather than
+		 exceptional, and is answered by the return value that follows rather
+		 than by a warning in someone's error log. Each of those statements says
+		 so where it stands.
+
+		 Custom-table SQL is annotated inline too.
+
+		 Every query against one of our own tables follows the same shape: the
+		 table name is built from $wpdb->prefix (a table name cannot be a
+		 placeholder, so it has to be interpolated) while every VALUE goes
+		 through prepare(). The sniff cannot tell the two apart, so each of those
+		 statements carries its own phpcs:disable/phpcs:enable pair saying so.
+
+		 If you add a query to one of those files the rule still stands: table
+		 name interpolated, values bound. Never interpolate a value. -->
+
+	<!-- In templates, whitespace inside tags such as <textarea> is significant.
+		 These sniffs reformat embedded PHP onto its own lines, which silently
+		 injects newlines into field values, so they are off for the views. -->
+	<rule ref="Squiz.PHP.EmbeddedPhp">
+		<exclude-pattern>/admin/views/*</exclude-pattern>
+	</rule>
+	<rule ref="Generic.WhiteSpace.ScopeIndent">
+		<exclude-pattern>/admin/views/*</exclude-pattern>
+	</rule>
+
+	<!-- The unit tests are plain PHP against WordPress-free classes; the
+		 WordPress file/naming conventions do not apply to them. -->
+	<rule ref="WordPress.Files.FileName">
+		<exclude-pattern>/tests/*</exclude-pattern>
+	</rule>
+	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
+		<exclude-pattern>/tests/*</exclude-pattern>
+	</rule>
+
+	<!-- Tests build fixtures with plain PHP file functions and exercise
+		 (un)serialize() on purpose; they never run inside WordPress. -->
+	<rule ref="WordPress.WP.AlternativeFunctions">
+		<exclude-pattern>/tests/*</exclude-pattern>
+	</rule>
+	<rule ref="WordPress.PHP.DiscouragedPHPFunctions">
+		<exclude-pattern>/tests/*</exclude-pattern>
+	</rule>
+	<rule ref="WordPress.Security.EscapeOutput">
+		<exclude-pattern>/tests/*</exclude-pattern>
+	</rule>
+</ruleset>
